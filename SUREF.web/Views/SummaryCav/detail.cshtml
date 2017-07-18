@@ -1,0 +1,63 @@
+﻿<br />
+<div class="container" ng-controller="summaryCavDetails">
+    <input type="hidden" id="Topic" value="@ViewBag.Topic" />
+    <input type="hidden" id="Date" value="@ViewBag.Date" />
+    <input type="hidden" id="Typ" value="@ViewBag.Typ" />
+    <input type="hidden" id="dt" value="@ViewBag.Dt" />
+    <input type="hidden" id="Xe" value="@ViewBag.Xe" />
+    <div class="row">
+        <div class="panel panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table  table-hover table-condensed">
+                <tr ng-repeat="row in $data">
+                    <td data-title="'No.'" class="text-center">{{ ((tableParams.page() - 1) * tableParams.count()) + $index+1 }}</td>
+                    <td data-title="'AircraftID'" class="text-center" sortable="'AircraftID'" filter="{AircraftID: 'text'}" hre>{{row.AircraftID}}</td>
+                    <td data-title="'CallSign'" class="text-center" sortable="'CallSign'" filter="{CallSign: 'text'}">{{row.CallSign}}</td>
+                    <td data-title="'TimeFrom'" class="text-center" sortable="'TimeFrom'" filter="{TimeFrom: 'text'}" ng-init="timeFrom=getDate(row.TimeFrom)">{{row.TimeFrom}}</td>
+                    <td data-title="'TimeTo'" class="text-center" sortable="'TimeTo'" filter="{TimeTo: 'text'}" ng-init="timeTo=getDate(row.TimeTo)">{{row.TimeTo}}</td>
+                    @if (ViewBag.Topic == "R2")
+                    {
+                        <td data-title="'R2_5M'" class="text-center" sortable="'R2_5M'" filter="{R2_5M: 'text'}">{{row.R2_5M}}</td>
+                    }
+                    else if (ViewBag.Topic == "R3")
+                    {
+                        <td data-title="'R3_5M'" class="text-center" sortable="'R3_5M'" filter="{R3_5M: 'number'}">{{row.R3_5M}}</td>
+                    }
+                    else if (ViewBag.Topic == "R7")
+                    {
+                        <td data-title="'R7_5M'" class="text-center" sortable="'R7_5M'" filter="{R7_5M: 'number'}">{{row.R7_5M}} </td>
+                    }
+                    else if (ViewBag.Topic == "R8")
+                    {
+                        <td data-title="'R8_5M (s.)'" class="text-center" sortable="'R8_5M'" filter="{R8_5M: 'number'}">{{row.R8_5M}} </td>
+                    }
+                    else if (ViewBag.Topic == "R9")
+                    {
+                        <td data-title="'R9_5M (s.)'" class="text-center" sortable="'R9_5M'" filter="{R9_5M: 'number'}">{{row.R9_5M}} </td>
+                    }
+                    else if (ViewBag.Topic == "R14")
+                    {
+                        <td data-title="'R14_5M'" class="text-center" sortable="'R14_5M'" filter="{R14_5M: 'number'}">{{row.R14_5M}}</td>
+                    }
+                    else if (ViewBag.Topic == "R4")
+                    {
+                        <td data-title="'R4 (Km.)'" class="text-center" sortable="'R4'" filter="{R4: 'number'}">{{row.R4}} </td>
+                    }
+                    else if (ViewBag.Topic == "R5")
+                    {
+                        <td data-title="'R5 (NM.)'" class="text-center" sortable="'R5'" filter="{R5: 'number'}">{{row.R5}} </td>
+                    }
+                    else if (ViewBag.Topic == "R11")
+                    {
+                        <td data-title="'R11 (FL.)'" class="text-center" sortable="'R11'" filter="{R11: 'number'}">{{row.R11}} </td>
+                    }
+                    <td>
+                        <a href="/map/index/{{row.AircraftID}}?date={{selectedDate}}">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <ssr>
+    <name>Suratthani</name>
+    <type>MSSR-S IRS-20MP/S</type>
+    <sic>82</sic>
+    <lat>9|8|0.9</lat>
+    <lng>99|8|43.6</lng>
+  </ssr>
+  <ssr>
+    <name>Phuket</name>
+    <type>MSSR-S IRS-20MP/S</type>
+    <sic>66</sic>
+    <lat>8|8|1.5</lat>
+    <lng>98|19|46.3</lng>
+  </ssr>
+  <ssr>
+    <name>Ubonratchathani</name>
+    <type>MSSR-S IRS-20MP/S</type>
+    <sic>162</sic>
+    <lat>15|14|41.8</lat>
+    <lng>104|52|4.8</lng>
+  </ssr>
+  <ssr>
+    <name>Hatyai</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>50</sic>
+    <lat>6|56|8.1</lat>
+    <lng>100|23|0.3</lng>
+  </ssr>
+  <ssr>
+    <name>Chiang Mai</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>98</sic>
+    <lat>18|45|34.8</lat>
+    <lng>98|58|1.6</lng>
+  </ssr>
+  <ssr>
+    <name>Donmueang</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>18</sic>
+    <lat>13|55|32.59</lat>
+    <lng>100|36|20.46</lng>
+  </ssr>
+  <ssr>
+    <name>Pitsanulok</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>114</sic>
+    <lat>16|45|58.72</lat>
+    <lng>100|16|41.60</lng>
+  </ssr>
+  <ssr>
+    <name>Udonthani</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>146</sic>
+    <lat>17|23|15.28</lat>
+    <lng>102|46|11.98</lng>
+  </ssr>
+  <ssr>
+    <name>Roi-Et</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>178</sic>
+    <lat>16|6|39.14</lat>
+    <lng>103|46|40.01</lng>
+  </ssr>
+  <ssr>
+    <name>Chumphon</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>210</sic>
+    <lat>10|49|4</lat>
+    <lng>99|21|56</lng>
+  </ssr>
+  <ssr>
+    <name>Chiangrai</name>
+    <type>MSSR-S SIR-S</type>
+    <sic>194</sic>
+    <lat>19|57|35.21</lat>
+    <lng>99|52|58</lng>
+  </ssr>
+</root>

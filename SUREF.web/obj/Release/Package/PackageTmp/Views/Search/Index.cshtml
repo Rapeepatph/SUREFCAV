@@ -1,0 +1,191 @@
+﻿<style>
+    .red {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #FF0000;
+    }
+
+    .blue {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #0000FF;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid black;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .angular-leaflet-map svg {
+        width: initial;
+        height: initial;
+    }
+</style>
+<div ng-controller="searchController">
+    <input type="hidden" id="Date" value="@ViewBag.RecentlyDate" />
+    <div class="page-header">
+        <h2>Search</h2>
+    </div>
+    
+       
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2">Date of Flight</span>
+                    <input id="calendar" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="strtdate" is-open="popup1.opened" datepicker-options="dateOptions" placeholder="Search Date . . ." ng-click="open1()" />
+                    <span class="input-group-btn" id="input1">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="row top-buffer">
+            <div class="col-md-7">
+                <div class="alert alert-info" role="alert">
+                    <strong>Info! </strong>You must include at least one call sign or aircraft address with 4 characters or more.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-disabled="input1disabled" placeholder="Call Sign or Aircraft Address.." ng-model="input1">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-disabled="input2disabled" placeholder="Call Sign or Aircraft Address.." ng-model="input2">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-disabled="input3disabled" placeholder="Call Sign or Aircraft Address.." ng-model="input3">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-disabled="input4disabled" placeholder="Call Sign or Aircraft Address.." ng-model="input4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class={{btnStatus}} ng-click="loadData()"><span class="glyphicon glyphicon-search"></span>  Search</button>
+                
+            </div>
+        </div>
+        <hr class="my-4"ng-hide="myVar">
+        <table class="table table-hover"ng-hide="myVar" >
+            <thead >
+                <tr>
+                    <th>AircraftID</th>
+                    <th>CallSign</th>
+                    <th>Time From</th>
+                    <th>Time To</th>
+                    <th>Sensor</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="x in Alldata|orderBy:'CallSign'">
+                <tr>
+                    <td>{{x.AircraftID}}</td>
+                    <td>{{x.CallSign}}</td>
+                    <td>{{x.TimeFrom}}</td>
+                    <td>{{x.TimeTo}}</td>
+                    <td>{{getNameofSensor(x.SensorID)}}</td>
+                    <td>
+                        <a href="/map/index/{{x.AircraftID}}?date={{selectedDate}}&typ=ADS-B&dt={{dtime}}" target="_blank">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr width="100%" />
+    <div class="row content">
+        <div class="col-md-2 ">
+            <h4>Details</h4>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-plane fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-xs-9">
+                            <h4>Aircraft ID : {{detailAircraftId}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-plane fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-xs-9">
+                            <h4>Call Sign : {{detailCallSign}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-xs-9">
+                            <h4>Track status</h4>
+                            <a>Lat : <b>{{detailLat}} E</b></a><br />
+                            <a>Lng : <b>{{detailLng}} N</b></a><br />
+                            <a>CallSign : <b>{{detailCallSign}}</b></a><br />
+                            <a>SIC : <b>{{detailSic}}</b></a><br />
+                            <a>NUCp : <b>{{detailNucp}}</b></a><br />
+                            <a>Angle(Degrees) : <b>{{detailAngle}}</b></a><br />
+                            <a>Cat : <b>{{detailCat}}</b></a><br />
+                            <a>Height (FL) : <b>{{detailHeight}}</b></a><br />
+                            <a>Climb Rate  : <b>{{detailClimbRate}}</b></a><br />
+                            <a>Update Time : <b>{{detailDatetime}}</b></a><br />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-xs-9">
+                            <h4>Path Status  </h4>
+                            <a>All available :</a><br />
+                            <b>{{detailAllDistance}}</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="col-md-12">
+                            <span class="badge">message : {{detailOfPath}}</span>
+                        </div>
+                        <div class="panel-body">
+                            <leaflet id="map" lf-center="bangkok" markers="markers" event-broadcast="events" paths="paths" decorations="decorations" layers="layers" width="100%" height="550px"></leaflet>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

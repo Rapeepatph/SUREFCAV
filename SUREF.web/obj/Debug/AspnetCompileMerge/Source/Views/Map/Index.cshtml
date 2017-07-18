@@ -1,0 +1,37 @@
+﻿<style>
+    .red {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #FF0000;
+    }
+
+    .blue {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #0000FF;
+    }
+    svg{
+width: 100%;
+height: 100%;
+}
+     .angular-leaflet-map svg{
+   width: initial;
+   height: initial;
+ } 
+</style>
+
+
+<div ng-controller="mapController" class="row content">
+    <div class="col-md-2 container">
+        <h4>Date : <input ng-model="date" /></h4>
+        <h4>Filght ID : <input ng-model="FlightID" /></h4>
+        <button ng-click="loadData()">EXECUTE</button>
+    </div>
+    <div class="col-md-10 container-fluid">
+        <hr width="100%"/>
+        <leaflet id="map" lf-center="bangkok" markers="markers" paths="paths" layers="layers" width="1500px" height="900px"></leaflet>
+    </div>
+    
+</div>
+
+

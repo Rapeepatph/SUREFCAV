@@ -1,0 +1,182 @@
+﻿<br />
+<div class="container" ng-controller="summaryDetails">
+    <input type="hidden" id="Topic" value="@ViewBag.Topic" />
+    <input type="hidden" id="Date" value="@ViewBag.Date" />
+    <input type="hidden" id="Typ" value="@ViewBag.Typ" />
+    <input type="hidden" id="dt" value="@ViewBag.Dt" />
+    <input type="hidden" id="Xe" value="@ViewBag.Xe" />
+    <div class="row">
+        <div class="panel panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table  table-hover table-condensed">
+                <tr ng-repeat="row in $data" >
+                    <td data-title="'No.'" class="text-center">{{ ((tableParams.page() - 1) * tableParams.count()) + $index+1 }}</td>
+                    <td data-title="'AircraftID'" class="text-center" sortable="'AircraftID'" filter="{AircraftID: 'text'}" hre>{{row.AircraftID}}</td>
+                    <td data-title="'CallSign'" class="text-center" sortable="'CallSign'" filter="{CallSign: 'text'}">{{row.CallSign}}</td>
+                    <td data-title="'TimeFrom'" class="text-center" sortable="'TimeFrom'" filter="{TimeFrom: 'text'}" ng-init="timeFrom=getDate(row.TimeFrom)">{{row.TimeFrom}}</td>
+                    <td data-title="'TimeTo'" class="text-center" sortable="'TimeTo'" filter="{TimeTo: 'text'}" ng-init="timeTo=getDate(row.TimeTo)">{{row.TimeTo}}</td>
+                    @if (ViewBag.Topic == "R2")
+                    {
+                        <td data-title="'R2_5M'" class="text-center" sortable="'R2_5M'" filter="{R2_5M: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R2_5M}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R2R")
+                    {
+                        <td data-title="'R2_5R'" class="text-center" sortable="'R2_5R'" filter="{R2_5R: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank"> 
+                                {{row.R2_5R}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R3")
+                    {
+                        <td data-title="'R3_5M'" class="text-center" sortable="'R3_5M'" filter="{R3_5M: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R3_5M}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R7")
+                    {
+                        <td data-title="'R7_5M'" class="text-center" sortable="'R7_5M'" filter="{R7_5M: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R7_5M}} 
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R7R")
+                    {
+                        <td data-title="'R7_5R'" class="text-center" sortable="'R7_5R'" filter="{R7_5R: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R7_5R}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R8")
+                    {
+                        <td data-title="'R8_5M (s.)'" class="text-center" sortable="'R8_5M'" filter="{R8_5M: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R8_5M}} 
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R9")
+                    {
+                        <td data-title="'R9_5M (s.)'" class="text-center" sortable="'R9_5M'" filter="{R9_5M: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R9_5M}} 
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R14")
+                    {
+                        <td data-title="'R14_5M'" class="text-center" sortable="'R14_5M'" filter="{R14_5M: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R14_5M}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R14R")
+                    {
+                        <td data-title="'R14_5R'" class="text-center" sortable="'R14_5R'" filter="{R14_5R: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R14_5R}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R4")
+                    {
+                        <td data-title="'R4 (Km.)'" class="text-center" sortable="'R4'" filter="{R4: 'number'}"> 
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R4}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R5")
+                    {
+                        <td data-title="'R5 (NM.)'" class="text-center" sortable="'R5'" filter="{R5: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R5}} 
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "R11")
+                    {
+                        <td data-title="'R11 (FL.)'" class="text-center" sortable="'R11'" filter="{R11: 'number'}">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                {{row.R11}}
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "chgIdent")
+                    {
+                        <td data-title="'change Ident'" class="text-center" >
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "infoCD")
+                    {
+                        <td data-title="'Climb/Decend Info'" class="text-center">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "trackVelo")
+                    {
+                        <td data-title="'trackVelo'" class="text-center">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "sensorSel")
+                    {
+                        <td data-title="'Sensor Selection'" class="text-center">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "al62")
+                    {
+                        <td data-title="'Altitude CAT62'" class="text-center">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "al21")
+                    {
+                        <td data-title="'Altitude CAT21'" class="text-center">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
+                    else if (ViewBag.Topic == "nucp")
+                    {
+                        <td data-title="'NUCP'" class="text-center">
+                            <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
+                    <td data-title="'Using'" class="text-center">
+                        <button type="button" class="btn btn-{{btnClass(row.indicator)}}" ng-click="AddDatatoDb(row.AircraftID,selectedDate)">{{btnmsg(row.indicator)}}</button>
+                    </td>
+                    <td>
+                        <a href="/map/index/{{row.AircraftID}}?date={{selectedDate}}&typ=@ViewBag.Typ&dt={{dt}}"  target="_blank">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

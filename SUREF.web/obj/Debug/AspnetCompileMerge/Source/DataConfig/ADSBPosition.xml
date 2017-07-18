@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <adsb>
+    <name>Tungmahamek</name>
+    <type>ADSB-SENSIS</type>
+    <sic>5</sic>
+    <lat>13|42|57</lat>
+    <lng>100|32|30</lng>
+  </adsb>
+  <adsb>
+    <name>Chiang Mai</name>
+    <type>ADSB-SENSIS</type>
+    <sic>100</sic>
+    <lat>18|35|24.64</lat>
+    <lng>98|29|13.82</lng>
+  </adsb>
+  <adsb>
+    <name>Hatyai</name>
+    <type>ADSB-SENSIS</type>
+    <sic>51</sic>
+    <lat>6|56|11.33</lat>
+    <lng>100|23|44.44</lng>
+  </adsb>
+  <adsb>
+    <name>Samui</name>
+    <type>ADSB-SENSIS</type>
+    <sic>83</sic>
+    <lat>9|29|31.55</lat>
+    <lng>99|59|16.79</lng>
+  </adsb>
+  <adsb>
+    <name>Ubonratchathani</name>
+    <type>ADSB-SENSIS</type>
+    <sic>163</sic>
+    <lat>15|14|45.87</lat>
+    <lng>104|52|9.37</lng>
+  </adsb>
+  <adsb>
+    <name>Udonthani</name>
+    <type>ADSB-SENSIS</type>
+    <sic>147</sic>
+    <lat>17|23|9.98</lat>
+    <lng>102|46|38.73</lng>
+  </adsb>
+</root>

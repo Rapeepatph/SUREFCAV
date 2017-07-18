@@ -1,0 +1,985 @@
+﻿<style>
+    .red {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #FF0000;
+    }
+
+    .blue {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #0000FF;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid black;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .angular-leaflet-map svg {
+        width: initial;
+        height: initial;
+    }
+</style>
+<div ng-controller="mapController" class="container" >
+    <input type="hidden" id="Id" value="@ViewBag.AircraftID" />
+    <input type="hidden" id="Date" value="@ViewBag.Date" />
+    <input type="hidden" id="Topic" value="@ViewBag.Topic" />
+    <input type="hidden" id="Typ" value="@ViewBag.Typ" />
+    <input type="hidden" id="dtSet" value="@ViewBag.DateTimeSet" />
+    @if (ViewBag.Topic == "R4" || ViewBag.Topic == "R5" || ViewBag.Topic == "R11")
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <h3>@ViewBag.Headline</h3>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h3>@ViewBag.Headline (@ViewBag.Typ)</h3>
+    }
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/map/index/@ViewBag.AircraftID?date=@ViewBag.Date&typ=@ViewBag.Typ&dt={{dtutc}}">
+                Go to All Charts
+            </a>
+        </div>
+    </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <i class="fa fa-plane fa-1x" aria-hidden="true"></i><b>   Flight ID : @ViewBag.AircraftID </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <i class="fa fa-calendar-check-o fa-1x" aria-hidden="true"></i><b>   Date : @ViewBag.Date </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <i class="fa fa-play-circle fa-1x" aria-hidden="true"></i><b>   Time From : @ViewBag.TimeFrom </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <i class="fa fa-stop-circle fa-1x" aria-hidden="true"></i><b>   Time To : @ViewBag.TimeTo </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <i class="fa fa-info-circle fa-1x" aria-hidden="true"></i>
+                                <b>   Track status</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a>Lat : <b>{{detailLat}} E</b></a><br />
+                                <a>Lng : <b>{{detailLng}} N</b></a><br />
+                                <a>CallSign : <b>{{detailCallSign}}</b></a><br />
+                                <a>SIC : <b>{{detailSic}}</b></a><br />
+                                <a>NUCp : <b>{{detailNucp}}</b></a><br />
+                                <a>Angle(Degrees) : <b>{{detailAngle}}</b></a><br />
+                                <a>Cat : <b>{{detailCat}}</b></a><br />
+                                <a>Height (FL) : <b>{{detailHeight}}</b></a><br />
+                                <a>Climb Rate  : <b>{{detailClimbRate}}</b></a><br />
+                                <a>Update Time : <b>{{detailDatetime}}</b></a><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <i class="fa fa-info-circle fa-1x" aria-hidden="true"></i>
+                                <b>  Path Status  </b>
+                            </div>
+                            <div class="col-xs-9">
+                                <a>All available :</a><br />
+                                <b>{{detailAllDistance}}</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <leaflet id="map" lf-center="bangkok" markers="markers" event-broadcast="events" paths="paths" decorations="decorations" layers="layers" width="100%" height="750px"></leaflet>
+                    </div>
+                    <div class="col-md-12">
+                        <span class="badge">message : {{detailOfPath}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        @if (ViewBag.Topic == "R2")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Altitude Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="chart1" config="chartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R2R")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Altitude Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="chart1" config="chartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R3")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R4")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-5">
+                    <a class="btn btn-danger" href="/diag/index/@ViewBag.AircraftID?&typ=@ViewBag.Typ&dt=@ViewBag.DateTimeSet">
+                        Diagnosis
+                    </a>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R5")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R7")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Altitude Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="chart1" config="chartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R7R")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Altitude Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="chart1" config="chartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R8")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Forward Altitude Age (Average = {{avgFLAge}}) </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart10" config="chart10Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R9")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Forward Altitude Age (Average = {{avgFLAge}}) </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart10" config="chart10Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R11")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Altitude Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="chart1" config="chartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Forward Altitude Age (Average = {{avgFLAge}}) </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart10" config="chart10Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R14")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Identification </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart8" config="chart8Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Identification </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart9" config="chart9Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "R14R")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Identification </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart8" config="chart8Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Identification </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart9" config="chart9Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "chgIdent")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Identification </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart8" config="chart8Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Identification </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart9" config="chart9Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "infoCD")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Rate of Climb </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart11" config="chart11Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Altitude Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="chart1" config="chartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "trackVelo")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Ground Speed </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart12" config="groundSpeedChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Rate of Climb </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart11" config="chart11Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Angle </h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart7" config="chart7Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "sensorSel")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Selected SIC Chart</h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart2" config="chart2Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "al62")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Altitude Analysis of CAT 62</h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart3" config="chart3Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "al21")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Altitude Analysis of CAT 21</h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart4" config="chart4Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Topic == "nucp")
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  NUCp of CAT 21 (Average of NUCp : {{avgNucp |number }})</h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart5" config="chart5Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-warning ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Distribution NUCp of CAT 21 (Average of NUCp : {{avgNucp|number}})</h3>
+                        </div>
+                        <div class="panel-body">
+                            <highchart id="chart6" config="chart6Config"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Continue Time Chart </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="timeChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Diffrential Chart</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <highchart id="timechart" config="diffLatLngChartConfig"></highchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

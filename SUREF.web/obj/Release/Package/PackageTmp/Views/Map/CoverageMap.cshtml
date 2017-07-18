@@ -1,0 +1,60 @@
+﻿<style>
+    .red {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #FF0000;
+    }
+
+    .blue {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #0000FF;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid black;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .angular-leaflet-map svg {
+        width: initial;
+        height: initial;
+    }
+</style>
+<div ng-controller="coverageMapController" class="container">
+    <div class="row">
+        <div class="page-header">
+            <h2>Search Date : {{ }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2">Date of Flight</span>
+                    <input id="calendar" type="text" aria-describedby="input1" class="form-control" uib-datepicker-popup="{{format}}" ng-model="strtdate" is-open="popup1.opened" datepicker-options="dateOptions" placeholder="Search Date . . ." ng-click="open1()" />
+                    <span class="input-group-btn" id="input1">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="loadData()"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+        </div>
+    </div>
+   <div class="row">
+       <div class="panel panel-success">
+           <div class="panel-body">
+               <leaflet id="map" lf-center="bangkok" markers="markers" paths="paths" layers="layers" width="100%" height="700px"></leaflet>
+           </div>
+       </div>
+   </div>
+    
+</div>

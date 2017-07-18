@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SUREFDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FlightView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SensorID" />
+      <PropertyRef Name="DateofFlight" />
+      <PropertyRef Name="AircraftID" />
+      <PropertyRef Name="CallSign" />
+      <PropertyRef Name="Mode3ACode" />
+      <PropertyRef Name="TrackID" />
+      <PropertyRef Name="TimeFrom" />
+      <PropertyRef Name="TimeTo" />
+      <PropertyRef Name="R2_5M_NR" />
+      <PropertyRef Name="R2_5M_NT" />
+      <PropertyRef Name="R7_5M_NC_V" />
+      <PropertyRef Name="R14_5M_NC_I" />
+      <PropertyRef Name="R2_5M" />
+      <PropertyRef Name="R7_5M" />
+      <PropertyRef Name="R14_5M" />
+      <PropertyRef Name="R2_5R_NR" />
+      <PropertyRef Name="R2_5R_NT" />
+      <PropertyRef Name="R7_5R_NC_V" />
+      <PropertyRef Name="R14_5R_NC_I" />
+      <PropertyRef Name="R2_5R" />
+      <PropertyRef Name="R7_5R" />
+      <PropertyRef Name="R14_5R" />
+      <PropertyRef Name="R2_3M_NR" />
+      <PropertyRef Name="R2_3M_NT" />
+      <PropertyRef Name="R7_3M_NC_V" />
+      <PropertyRef Name="R14_3M_NC_I" />
+      <PropertyRef Name="R2_3M" />
+      <PropertyRef Name="R7_3M" />
+      <PropertyRef Name="R14_3M" />
+      <PropertyRef Name="R2_3R_NR" />
+      <PropertyRef Name="R2_3R_NT" />
+      <PropertyRef Name="R7_3R_NC_V" />
+      <PropertyRef Name="R14_3R_NC_I" />
+      <PropertyRef Name="R2_3R" />
+      <PropertyRef Name="R7_3R" />
+      <PropertyRef Name="R14_3R" />
+      <PropertyRef Name="NUCP" />
+      <PropertyRef Name="R3_5M_NG_LONGGAP_COUNT" />
+      <PropertyRef Name="R3_5R_NG_LONGGAP_COUNT" />
+      <PropertyRef Name="R3_3M_NG_LONGGAP_COUNT" />
+      <PropertyRef Name="R3_3R_NG_LONGGAP_COUNT" />
+      <PropertyRef Name="R8_MFL_AGE_AVG" />
+      <PropertyRef Name="R9_MFL_AGE_MAX" />
+      <PropertyRef Name="R11_STABLE_FLIGHT" />
+      <PropertyRef Name="R11_CLIMB_DESCEND_FLIGHT" />
+      <PropertyRef Name="R11_IDENTIFY_FLIGHT_COUNT" />
+      <PropertyRef Name="R6_3R_CLOSE_N" />
+      <PropertyRef Name="R6_5R_CLOSE_N" />
+      <PropertyRef Name="R6_3R_CLOSE_ZIGMA_E_SQ" />
+      <PropertyRef Name="R6_5R_CLOSE_ZIGMA_E_SQ" />
+      <PropertyRef Name="FilePath" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="ProcessRound" />
+      <PropertyRef Name="HasPlotInCAV" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SensorID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DateofFlight" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AircraftID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CallSign" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mode3ACode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrackID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TimeTo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="R2_5M_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_5M_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_5M_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_5M_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_5M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R7_5M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R14_5M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R2_5R_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_5R_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_5R_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_5R_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_5R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R7_5R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R14_5R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R2_3M_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_3M_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_3M_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_3M_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_3M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R7_3M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R14_3M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R2_3R_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_3R_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_3R_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_3R_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_3R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R7_3R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R14_3R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="NUCP" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R3_5M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R3_5R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R3_3M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R3_3R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R8_MFL_AGE_AVG" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R9_MFL_AGE_MAX" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R11_STABLE_FLIGHT" Type="Int32" Nullable="false" />
+    <Property Name="R11_CLIMB_DESCEND_FLIGHT" Type="Int32" Nullable="false" />
+    <Property Name="R11_IDENTIFY_FLIGHT_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R6_3R_CLOSE_N" Type="Int32" Nullable="false" />
+    <Property Name="R6_5R_CLOSE_N" Type="Int32" Nullable="false" />
+    <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HasPlotInCAV" Type="Int32" Nullable="false" />
+    <Property Name="Indicator" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MappedFlightView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="FlightID" />
+      <PropertyRef Name="AnotherFlightID" />
+      <PropertyRef Name="TimeFrom" />
+      <PropertyRef Name="TimeTo" />
+      <PropertyRef Name="R4_H_ZIGMA_E_SQ" />
+      <PropertyRef Name="R4_H_N" />
+      <PropertyRef Name="R4_H_RMS" />
+      <PropertyRef Name="R11_V_ZIGMA_E_SQ" />
+      <PropertyRef Name="R11_V_N" />
+      <PropertyRef Name="R11_V_RMS" />
+      <PropertyRef Name="R10_VI_NI200" />
+      <PropertyRef Name="R10_VI_NI300" />
+      <PropertyRef Name="R10_VI_NV" />
+      <PropertyRef Name="R10_VI_R200" />
+      <PropertyRef Name="R10_VI_R300" />
+      <PropertyRef Name="R5_H_CE_R_5N" />
+      <PropertyRef Name="R5_H_CE_R_3N" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="ProcessRound" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlightID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AnotherFlightID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TimeTo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="R4_H_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="R4_H_N" Type="Int32" Nullable="false" />
+    <Property Name="R4_H_RMS" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="R4_H_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="R11_V_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="R11_V_N" Type="Int32" Nullable="false" />
+    <Property Name="R11_V_RMS" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="R11_V_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="R10_VI_NI200" Type="Int32" Nullable="false" />
+    <Property Name="R10_VI_NI300" Type="Int32" Nullable="false" />
+    <Property Name="R10_VI_NV" Type="Int32" Nullable="false" />
+    <Property Name="R10_VI_R200" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="R10_VI_R300" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="R10_VI_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="R5_H_CE_R_5N" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="R5_H_CE_R_3N" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SensorView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Port" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="SUREFEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FlightViews" EntityType="Self.FlightView" />
+    <EntitySet Name="MappedFlightViews" EntityType="Self.MappedFlightView" />
+    <EntitySet Name="SensorViews" EntityType="Self.SensorView" />
+    <EntitySet Name="Flights" EntityType="SUREFDb.Flight" />
+  </EntityContainer>
+  <EntityType Name="Flight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SensorID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DateofFlight" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AircraftID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CallSign" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mode3ACode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrackID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TimeTo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="R2_5M_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_5M_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_5M_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_5M_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_5M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R7_5M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R14_5M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R2_5R_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_5R_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_5R_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_5R_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_5R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R7_5R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R14_5R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R2_3M_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_3M_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_3M_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_3M_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_3M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R7_3M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R14_3M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R2_3R_NR" Type="Int32" Nullable="false" />
+    <Property Name="R2_3R_NT" Type="Int32" Nullable="false" />
+    <Property Name="R7_3R_NC_V" Type="Int32" Nullable="false" />
+    <Property Name="R14_3R_NC_I" Type="Int32" Nullable="false" />
+    <Property Name="R2_3R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R7_3R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R14_3R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="NUCP" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R3_5M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R3_5R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R3_3M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R3_3R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R8_MFL_AGE_AVG" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R9_MFL_AGE_MAX" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R11_STABLE_FLIGHT" Type="Int32" Nullable="false" />
+    <Property Name="R11_CLIMB_DESCEND_FLIGHT" Type="Int32" Nullable="false" />
+    <Property Name="R11_IDENTIFY_FLIGHT_COUNT" Type="Int32" Nullable="false" />
+    <Property Name="R6_3R_CLOSE_N" Type="Int32" Nullable="false" />
+    <Property Name="R6_5R_CLOSE_N" Type="Int32" Nullable="false" />
+    <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="FilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HasPlotInCAV" Type="Int32" Nullable="false" />
+    <Property Name="Indicator" Type="Int32" />
+  </EntityType>
+</Schema>

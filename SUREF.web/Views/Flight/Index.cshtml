@@ -1,0 +1,44 @@
+﻿
+<div ng-controller="flightController" class="container">
+    <div class="row">
+        <div class="page-header">
+            <h2>Search Date : {{selectedDate}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">Date of Flight</span>
+                <input id="calendar" type="text" aria-describedby="input1" class="form-control" uib-datepicker-popup="{{format}}" ng-model="strtdate" is-open="popup1.opened" datepicker-options="dateOptions" placeholder="Search Date . . ." ng-click="open1()" />
+                <span class="input-group-btn" id="input1">
+                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-default" ng-click="init()" >
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="panel panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table  table-hover table-condensed ">
+                <tr ng-repeat="row in $data"  >
+                    <td data-title="'No.'" class="text-center">{{$index+1}}</td>
+                    <td data-title="'AircraftID'" class="text-center" sortable="'AircraftID'" filter="{AircraftID: 'text'}" hre>{{row.AircraftID}}</td>
+                    <td data-title="'CallSign'" class="text-center" sortable="'CallSign'" filter="{CallSign: 'text'}">{{row.CallSign}}</td>
+                    <td data-title="'TimeFrom'" class="text-center" sortable="'TimeFrom'" filter="{TimeFrom: 'text'}" ng-init="timeFrom=getDate(row.TimeFrom)">{{row.TimeFrom}}</td>
+                    <td data-title="'TimeTo'" class="text-center" sortable="'TimeTo'" filter="{TimeTo: 'text'}" ng-init="timeTo=getDate(row.TimeTo)">{{row.TimeTo}}</td>
+                    <td>
+                        <a href="/map/index/{{row.AircraftID}}?date={{selectedDate}}">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

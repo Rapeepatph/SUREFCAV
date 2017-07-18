@@ -1,0 +1,526 @@
+﻿
+<div  class="container" ng-controller="summaryController">
+    <input type="hidden" id="Date" value="@ViewBag.RecentlyDate" />
+    <input type="hidden" id="Type" value="@ViewBag.SensorId" />
+
+    <div class="row">
+        <div class="page-header">
+            <h2>Search Date : {{selectedDate}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">Date of Flight</span>
+                <input id="calendar" type="text" aria-describedby="input1" class="form-control" uib-datepicker-popup="{{format}}" ng-model="strtdate" is-open="popup1.opened" datepicker-options="dateOptions" placeholder="Search Date . . ." ng-click="open1()" />
+                <span class="input-group-btn" id="input1">
+                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        @*<div class="col-md-2" data-ng-repeat="cat in catSurveillances">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="radiobtn.typ" ng-value=cat> {{cat}}
+                </label>
+            </div>
+        </div>*@
+        <div class="col-md-2">
+            <div class="btn-group" ng-repeat="cat in catSurveillances">
+                <label class="btn btn-success" ng-model="radiobtn.typ" uib-btn-radio=cat>{{cat}}</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-default" ng-click="init()">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+        <div class="col-md-2">
+            <p>Selected Type : {{radiobtn.selected}} </p>
+        </div>
+    </div>
+    
+    <br />
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">Horizontal Position</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R2_5M.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Probability of update of horizontal position (R2)", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R2&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    8 Seconds Probability of Update (R2 Mandatory)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R2_5M.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : < 97%"></i>
+                                    : {{R2_5M.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : >= 97%"></i> : {{R2_5M.clean}} flights
+
+                                </li>
+                                <li class="list-group-item ">
+                                    <h4>
+                                        {{R2_5M.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint :Global Percentage of Clean equal 100% of the flights"></i>
+                                        <input type="hidden" id="input-r2" name="input-r2" value='{{R2_5M.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                    @*<span uib-rating ng-model="R2_5Mpoint"  read-only="true" ></span>*@
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R2_5R.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Probability of update of horizontal position (R2)", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R2R&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    6 Seconds Probability of Update (R2 Recommended)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R2_5R.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : < 97%"></i>
+                                    : {{R2_5R.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : >= 97%"></i> : {{R2_5R.clean}} flights
+
+                                </li>
+                                <li class="list-group-item ">
+                                    <h4>
+                                        {{R2_5R.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint :Global Percentage of Clean equal 100% of the flights"></i>
+                                        <input type="hidden" id="input-r21" name="input-r21" value='{{R2_5R.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                    @*<span uib-rating ng-model="R2_5Mpoint"  read-only="true" ></span>*@
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R4.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Ratio of missed 3D position in long gaps (R3) ", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R4&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    Horizontal position RMS error (R4)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R4.status}}">
+                                <li class="list-group-item">Total : {{totalMappedFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : > 550m - 0.55km"></i>
+                                    : {{R4.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : <= 550m - 0.55km"></i> : {{R4.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R4.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean Greater or equal to 98% global"></i>
+                                        <input type="hidden" id="input-r4" name="input-r4" value='{{R4.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">Altitude</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R7_5M.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Probability of update of horizontal position (R2)", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R7&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    8 Seconds Probability of Update (R7 Mandatory)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R7_5M.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : < 97%"></i>
+                                    : {{R7_5M.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : >= 97%"></i> : {{R7_5M.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R7_5M.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean Greater or equal to 96% global"></i>
+                                        <input type="hidden" id="input-r7" name="input-r7" value='{{R7_5M.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R7_5R.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Probability of update of horizontal position (R2)", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R7R&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    6 Seconds Probability of Update (R7 Recommended)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R7_5R.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : < 97%"></i>
+                                    : {{R7_5R.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : >= 97%"></i> : {{R7_5R.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R7_5R.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean Greater or equal to 96% global"></i>
+                                        <input type="hidden" id="input-r71" name="input-r71" value='{{R7_5R.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R8_5M.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Probability of update of horizontal position (R2)", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R8&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    Pressure altitude average data age (R8)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R8_5M.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : > 4s"></i>
+                                    : {{R8_5M.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : <= 4s"></i> : {{R8_5M.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R8_5M.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean Less than or equal to 4 seconds"></i>
+                                        <input type="hidden" id="input-r8" name="input-r8" value='{{R8_5M.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R9_5M.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Ratio of missed 3D position in long gaps (R3) ", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R9&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    Pressure altitude maximum data age (R9)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R9_5M.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : >= 16s"></i>
+                                    : {{R9_5M.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : < 16s"></i> : {{R9_5M.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R9_5M.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean Less than 16 seconds"></i>
+                                        <input type="hidden" id="input-r9" name="input-r9" value='{{R9_5M.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R11.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Ratio of missed 3D position in long gaps (R3) ", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R11&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    Pressure altitude unsigned error (R11)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R11.status}}">
+                                <li class="list-group-item">Total : {{totalMappedFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : > 300ft - FL 3"></i>
+                                    : {{R11.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : <= 300ft - FL 3"></i> : {{R11.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R11.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean 100% of the flights"></i>
+                                        <input type="hidden" id="input-r11" name="input-r11" value='{{R11.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">Identification</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R14_5M.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Ratio of missed 3D position in long gaps (R3) ", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R14&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    8 Seconds Probability of update (R14 Mandatory)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R14_5M.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : < 97%"></i>
+                                    : {{R14_5M.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : >= 97%"></i> : {{R14_5M.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R14_5M.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean Greater or equal to 98% global"></i>
+                                        <input type="hidden" id="input-r14" name="input-r14" value='{{R14_5M.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R14_5R.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                <a href="/summary/detail/?topic=R14R&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    6 Seconds Probability of update (R14 Recommened)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R14_5R.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : < 97%"></i>
+                                    : {{R14_5R.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : >= 97%"></i> : {{R14_5R.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R14_5R.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean Greater or equal to 98% global"></i>
+                                        <input type="hidden" id="input-r141" name="input-r141" value='{{R14_5R.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <ul class="list-group alert-info">
+                                    <li class="list-group-item">
+                                        <a href="/summary/detail/?topic=chgIdent&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                            Change of Identification
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">3D Position and Others</div>
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R3_5M.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Ratio of missed 3D position in long gaps (R3) ", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R3&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    Ratio of missed 3D position in long gaps (R3)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R3_5M.status}}">
+                                <li class="list-group-item">Total : {{totalFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Long gap"></i>
+                                    : {{R3_5M.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : No Long gap"></i>
+                                    : {{R3_5M.clean}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R3_5M.mean}}
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Mean Long Gaps Less than or equal to 0.5%"></i>
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-{{R5.status}}">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading btn-block">
+                                @*@Html.ActionLink("Ratio of missed 3D position in long gaps (R3) ", "Index", "Flight")*@
+                                <a href="/summary/detail/?topic=R5&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                    Three consecutive correlated horizontal position errors (R5)
+                                </a>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group alert-{{R5.status}}">
+                                <li class="list-group-item">Total : {{totalMappedFlights}} flights</li>
+                                <li class="list-group-item">
+                                    Quarantine
+                                    <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : > 926m-0.5NM"></i>
+                                    : {{R5.quarantine}} flights
+                                </li>
+                                <li class="list-group-item">
+                                    Clean <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : <= 926m-0.5NM"></i> : {{R5.clean}} flights
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>
+                                        {{R5.globalPercent}} %
+                                        <i class="fa fa-question-circle " aria-hidden="true" data-toggle="tooltip" data-original-title="Hint : Global Percentage of Clean 100% of the flights"></i>
+                                        <input type="hidden" id="input-r5" name="input-r5" value='{{R5.point}}' class=" rating-loading" data-size="s" data-rtl="true">
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-6" ng-if="radiobtn.selected==='SSR/MRT'">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <ul class="list-group alert-info">
+                                        <li class="list-group-item">
+                                            <a href="/summary/detail/?topic=infoCD&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                                Rate of Climb / Descend Information
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="/summary/detail/?topic=trackVelo&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                                Track Velocity
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="/summary/detail/?topic=sensorSel&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                                Sensor Selection Information
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="/summary/detail/?topic=al62&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                                Barometric Altitude / Geometric Altitude Comparison (CAT62)
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" ng-if="radiobtn.selected==='ADS-B'">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <ul class="list-group alert-info">
+                                        <li class="list-group-item">
+                                            <a href="/summary/detail/?topic=al21&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                                Barometric Altitude / Geometric Altitude Comparison (CAT21)
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="/summary/detail/?topic=nucp&dt={{selectedDate}}&typ={{radiobtn.typ}}&x={{strtdatex}}" target="_blank">
+                                                NUCP
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+              </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SUREFDbStoreContainer" CdmEntityContainer="SUREFEntities">
+    <EntitySetMapping Name="FlightViews">
+      <EntityTypeMapping TypeName="SUREFDb.FlightView">
+        <MappingFragment StoreEntitySet="FlightView">
+          <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="DateofFlight" ColumnName="DateofFlight" />
+          <ScalarProperty Name="AircraftID" ColumnName="AircraftID" />
+          <ScalarProperty Name="CallSign" ColumnName="CallSign" />
+          <ScalarProperty Name="Mode3ACode" ColumnName="Mode3ACode" />
+          <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+          <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+          <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+          <ScalarProperty Name="R2_5M_NR" ColumnName="R2_5M_NR" />
+          <ScalarProperty Name="R2_5M_NT" ColumnName="R2_5M_NT" />
+          <ScalarProperty Name="R7_5M_NC_V" ColumnName="R7_5M_NC_V" />
+          <ScalarProperty Name="R14_5M_NC_I" ColumnName="R14_5M_NC_I" />
+          <ScalarProperty Name="R2_5M" ColumnName="R2_5M" />
+          <ScalarProperty Name="R7_5M" ColumnName="R7_5M" />
+          <ScalarProperty Name="R14_5M" ColumnName="R14_5M" />
+          <ScalarProperty Name="R2_5R_NR" ColumnName="R2_5R_NR" />
+          <ScalarProperty Name="R2_5R_NT" ColumnName="R2_5R_NT" />
+          <ScalarProperty Name="R7_5R_NC_V" ColumnName="R7_5R_NC_V" />
+          <ScalarProperty Name="R14_5R_NC_I" ColumnName="R14_5R_NC_I" />
+          <ScalarProperty Name="R2_5R" ColumnName="R2_5R" />
+          <ScalarProperty Name="R7_5R" ColumnName="R7_5R" />
+          <ScalarProperty Name="R14_5R" ColumnName="R14_5R" />
+          <ScalarProperty Name="R2_3M_NR" ColumnName="R2_3M_NR" />
+          <ScalarProperty Name="R2_3M_NT" ColumnName="R2_3M_NT" />
+          <ScalarProperty Name="R7_3M_NC_V" ColumnName="R7_3M_NC_V" />
+          <ScalarProperty Name="R14_3M_NC_I" ColumnName="R14_3M_NC_I" />
+          <ScalarProperty Name="R2_3M" ColumnName="R2_3M" />
+          <ScalarProperty Name="R7_3M" ColumnName="R7_3M" />
+          <ScalarProperty Name="R14_3M" ColumnName="R14_3M" />
+          <ScalarProperty Name="R2_3R_NR" ColumnName="R2_3R_NR" />
+          <ScalarProperty Name="R2_3R_NT" ColumnName="R2_3R_NT" />
+          <ScalarProperty Name="R7_3R_NC_V" ColumnName="R7_3R_NC_V" />
+          <ScalarProperty Name="R14_3R_NC_I" ColumnName="R14_3R_NC_I" />
+          <ScalarProperty Name="R2_3R" ColumnName="R2_3R" />
+          <ScalarProperty Name="R7_3R" ColumnName="R7_3R" />
+          <ScalarProperty Name="R14_3R" ColumnName="R14_3R" />
+          <ScalarProperty Name="NUCP" ColumnName="NUCP" />
+          <ScalarProperty Name="R3_5M_NG_LONGGAP_COUNT" ColumnName="R3_5M_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="R3_5R_NG_LONGGAP_COUNT" ColumnName="R3_5R_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="R3_3M_NG_LONGGAP_COUNT" ColumnName="R3_3M_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="R3_3R_NG_LONGGAP_COUNT" ColumnName="R3_3R_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="R8_MFL_AGE_AVG" ColumnName="R8_MFL_AGE_AVG" />
+          <ScalarProperty Name="R9_MFL_AGE_MAX" ColumnName="R9_MFL_AGE_MAX" />
+          <ScalarProperty Name="R11_STABLE_FLIGHT" ColumnName="R11_STABLE_FLIGHT" />
+          <ScalarProperty Name="R11_CLIMB_DESCEND_FLIGHT" ColumnName="R11_CLIMB_DESCEND_FLIGHT" />
+          <ScalarProperty Name="R11_IDENTIFY_FLIGHT_COUNT" ColumnName="R11_IDENTIFY_FLIGHT_COUNT" />
+          <ScalarProperty Name="R6_3R_CLOSE_N" ColumnName="R6_3R_CLOSE_N" />
+          <ScalarProperty Name="R6_5R_CLOSE_N" ColumnName="R6_5R_CLOSE_N" />
+          <ScalarProperty Name="R6_3R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_3R_CLOSE_ZIGMA_E_SQ" />
+          <ScalarProperty Name="R6_5R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_5R_CLOSE_ZIGMA_E_SQ" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />
+          <ScalarProperty Name="HasPlotInCAV" ColumnName="HasPlotInCAV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MappedFlightViews">
+      <EntityTypeMapping TypeName="SUREFDb.MappedFlightView">
+        <MappingFragment StoreEntitySet="MappedFlightView">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FlightID" ColumnName="FlightID" />
+          <ScalarProperty Name="AnotherFlightID" ColumnName="AnotherFlightID" />
+          <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+          <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+          <ScalarProperty Name="R4_H_ZIGMA_E_SQ" ColumnName="R4_H_ZIGMA_E_SQ" />
+          <ScalarProperty Name="R4_H_N" ColumnName="R4_H_N" />
+          <ScalarProperty Name="R4_H_RMS" ColumnName="R4_H_RMS" />
+          <ScalarProperty Name="R4_H_Diagnose" ColumnName="R4_H_Diagnose" />
+          <ScalarProperty Name="R11_V_ZIGMA_E_SQ" ColumnName="R11_V_ZIGMA_E_SQ" />
+          <ScalarProperty Name="R11_V_N" ColumnName="R11_V_N" />
+          <ScalarProperty Name="R11_V_RMS" ColumnName="R11_V_RMS" />
+          <ScalarProperty Name="R11_V_Diagnose" ColumnName="R11_V_Diagnose" />
+          <ScalarProperty Name="R10_VI_NI200" ColumnName="R10_VI_NI200" />
+          <ScalarProperty Name="R10_VI_NI300" ColumnName="R10_VI_NI300" />
+          <ScalarProperty Name="R10_VI_NV" ColumnName="R10_VI_NV" />
+          <ScalarProperty Name="R10_VI_R200" ColumnName="R10_VI_R200" />
+          <ScalarProperty Name="R10_VI_R300" ColumnName="R10_VI_R300" />
+          <ScalarProperty Name="R10_VI_Diagnose" ColumnName="R10_VI_Diagnose" />
+          <ScalarProperty Name="R5_H_CE_R_5N" ColumnName="R5_H_CE_R_5N" />
+          <ScalarProperty Name="R5_H_CE_R_3N" ColumnName="R5_H_CE_R_3N" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SensorViews">
+      <EntityTypeMapping TypeName="SUREFDb.SensorView">
+        <MappingFragment StoreEntitySet="SensorView">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flights">
+      <EntityTypeMapping TypeName="SUREFDb.Flight">
+        <MappingFragment StoreEntitySet="Flight">
+          <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+          <ScalarProperty Name="HasPlotInCAV" ColumnName="HasPlotInCAV" />
+          <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="R6_5R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_5R_CLOSE_ZIGMA_E_SQ" />
+          <ScalarProperty Name="R6_3R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_3R_CLOSE_ZIGMA_E_SQ" />
+          <ScalarProperty Name="R6_5R_CLOSE_N" ColumnName="R6_5R_CLOSE_N" />
+          <ScalarProperty Name="R6_3R_CLOSE_N" ColumnName="R6_3R_CLOSE_N" />
+          <ScalarProperty Name="R11_IDENTIFY_FLIGHT_COUNT" ColumnName="R11_IDENTIFY_FLIGHT_COUNT" />
+          <ScalarProperty Name="R11_CLIMB_DESCEND_FLIGHT" ColumnName="R11_CLIMB_DESCEND_FLIGHT" />
+          <ScalarProperty Name="R11_STABLE_FLIGHT" ColumnName="R11_STABLE_FLIGHT" />
+          <ScalarProperty Name="R9_MFL_AGE_MAX" ColumnName="R9_MFL_AGE_MAX" />
+          <ScalarProperty Name="R8_MFL_AGE_AVG" ColumnName="R8_MFL_AGE_AVG" />
+          <ScalarProperty Name="R3_3R_NG_LONGGAP_COUNT" ColumnName="R3_3R_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="R3_3M_NG_LONGGAP_COUNT" ColumnName="R3_3M_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="R3_5R_NG_LONGGAP_COUNT" ColumnName="R3_5R_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="R3_5M_NG_LONGGAP_COUNT" ColumnName="R3_5M_NG_LONGGAP_COUNT" />
+          <ScalarProperty Name="NUCP" ColumnName="NUCP" />
+          <ScalarProperty Name="R14_3R" ColumnName="R14_3R" />
+          <ScalarProperty Name="R7_3R" ColumnName="R7_3R" />
+          <ScalarProperty Name="R2_3R" ColumnName="R2_3R" />
+          <ScalarProperty Name="R14_3R_NC_I" ColumnName="R14_3R_NC_I" />
+          <ScalarProperty Name="R7_3R_NC_V" ColumnName="R7_3R_NC_V" />
+          <ScalarProperty Name="R2_3R_NT" ColumnName="R2_3R_NT" />
+          <ScalarProperty Name="R2_3R_NR" ColumnName="R2_3R_NR" />
+          <ScalarProperty Name="R14_3M" ColumnName="R14_3M" />
+          <ScalarProperty Name="R7_3M" ColumnName="R7_3M" />
+          <ScalarProperty Name="R2_3M" ColumnName="R2_3M" />
+          <ScalarProperty Name="R14_3M_NC_I" ColumnName="R14_3M_NC_I" />
+          <ScalarProperty Name="R7_3M_NC_V" ColumnName="R7_3M_NC_V" />
+          <ScalarProperty Name="R2_3M_NT" ColumnName="R2_3M_NT" />
+          <ScalarProperty Name="R2_3M_NR" ColumnName="R2_3M_NR" />
+          <ScalarProperty Name="R14_5R" ColumnName="R14_5R" />
+          <ScalarProperty Name="R7_5R" ColumnName="R7_5R" />
+          <ScalarProperty Name="R2_5R" ColumnName="R2_5R" />
+          <ScalarProperty Name="R14_5R_NC_I" ColumnName="R14_5R_NC_I" />
+          <ScalarProperty Name="R7_5R_NC_V" ColumnName="R7_5R_NC_V" />
+          <ScalarProperty Name="R2_5R_NT" ColumnName="R2_5R_NT" />
+          <ScalarProperty Name="R2_5R_NR" ColumnName="R2_5R_NR" />
+          <ScalarProperty Name="R14_5M" ColumnName="R14_5M" />
+          <ScalarProperty Name="R7_5M" ColumnName="R7_5M" />
+          <ScalarProperty Name="R2_5M" ColumnName="R2_5M" />
+          <ScalarProperty Name="R14_5M_NC_I" ColumnName="R14_5M_NC_I" />
+          <ScalarProperty Name="R7_5M_NC_V" ColumnName="R7_5M_NC_V" />
+          <ScalarProperty Name="R2_5M_NT" ColumnName="R2_5M_NT" />
+          <ScalarProperty Name="R2_5M_NR" ColumnName="R2_5M_NR" />
+          <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+          <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+          <ScalarProperty Name="TrackID" ColumnName="TrackID" />
+          <ScalarProperty Name="Mode3ACode" ColumnName="Mode3ACode" />
+          <ScalarProperty Name="CallSign" ColumnName="CallSign" />
+          <ScalarProperty Name="AircraftID" ColumnName="AircraftID" />
+          <ScalarProperty Name="DateofFlight" ColumnName="DateofFlight" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

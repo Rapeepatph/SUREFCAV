@@ -1,0 +1,71 @@
+﻿<style>
+    .red {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #FF0000;
+    }
+
+    .blue {
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #0000FF;
+    }
+    .green{
+        border-radius: 120px;
+        opacity: .75;
+        background-color: #228B22;
+    }
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid black;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .angular-leaflet-map svg {
+        width: initial;
+        height: initial;
+    }
+</style>
+<div ng-controller="diagController" class="container">
+    <input type="hidden" id="Id" value="@ViewBag.AircraftID" />
+    <input type="hidden" id="Date" value="@ViewBag.Date" />
+    <input type="hidden" id="Typ" value="@ViewBag.Typ" />
+    <h2>Date : @ViewBag.Date</h2>
+    <div class="row">
+        <div class="panel panel-body">
+            <table ng-table="tableParams" show-filter="true" class="table  table-hover table-condensed">
+                <tr ng-repeat="row in $data">
+                    <td data-title="'No.'" class="text-center">{{ ((tableParams.page() - 1) * tableParams.count()) + $index+1 }}</td>
+                    <td data-title="'Time'" class="text-center" sortable="'Time'" filter="{Time: 'text'}" ng-init="Time=getDate(row.Time)">{{row.Time}}</td>
+                    <td data-title="'LAT'" class="text-center" sortable="'LAT'" filter="{LAT: 'text'}" >{{row.LAT}}</td>
+                    <td data-title="'LNG'" class="text-center" sortable="'LNG'" filter="{LNG: 'text'}">{{row.LNG}}</td>
+                    <td data-title="'REF_LAT'" class="text-center" sortable="'REF_LAT'" filter="{REF_LAT: 'text'}">{{row.REF_LAT}}</td>
+                    <td data-title="'REF_LNG'" class="text-center" sortable="'REF_LNG'" filter="{REF_LNG: 'text'}">{{row.REF_LNG}}</td>
+                    <td data-title="'Differential (Km.)'" class="text-center" sortable="'Distance'" filter="{Distance: 'number'}">{{row.Distance}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="col-md-12">
+                <span class="badge">Track Details : {{detailOfMarker}}</span>
+            </div>
+            <div class="col-md-12">
+                <span class="badge"> Path Details : {{detailOfPath}}</span>
+            </div>
+            <div class="panel-body">
+                <leaflet id="map" lf-center="bangkok" markers="markers" event-broadcast="events" paths="paths" decorations="decorations" layers="layers" width="100%" height="550px"></leaflet>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

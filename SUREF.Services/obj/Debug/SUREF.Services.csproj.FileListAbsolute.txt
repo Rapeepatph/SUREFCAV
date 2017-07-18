@@ -1,0 +1,45 @@
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\obj\Debug\SUREF.Services.csprojResolveAssemblyReference.cache
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\SUREF.Services.dll.config
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\SUREF.Services.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\SUREF.Services.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\EntityFramework.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\SUREF.Data.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\SUREF.Data.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\EntityFramework.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\obj\Debug\SUREF.Services.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\obj\Debug\SUREF.Services.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\CCMS.Core.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\SUREF.Repositories.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Services\bin\Debug\SUREF.Repositories.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\SUREF.Services.dll.config
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\SUREF.Services.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\SUREF.Services.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\CCMS.Core.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\EntityFramework.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\SUREF.Data.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\SUREF.Repositories.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\SUREF.Data.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\SUREF.Repositories.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\EntityFramework.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\obj\Debug\SUREF.Services.csprojResolveAssemblyReference.cache
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\obj\Debug\SUREF.Services.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF Cav\SUREF.Services\obj\Debug\SUREF.Services.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\SUREF.Services.dll.config
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\SUREF.Services.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\SUREF.Services.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\CCMS.Core.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\EntityFramework.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\SUREF.Data.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\SUREF.Repositories.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\SUREF.Data.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\SUREF.Repositories.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\EntityFramework.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\obj\Debug\SUREF.Services.csprojResolveAssemblyReference.cache
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\obj\Debug\SUREF.Services.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Services\obj\Debug\SUREF.Services.pdb
