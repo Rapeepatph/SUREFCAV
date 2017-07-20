@@ -19,8 +19,11 @@
                         @item.Name
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", "Role", new { roleId = item.Id }, null)  | 
-                        @Html.ActionLink("Delete", "Delete", "Role", new { roleId = item.Id }, null)  
+                        @if(item.Name != "sysAdmin")
+                        {
+                            @Html.ActionLink("Edit", "Edit", "Role", new { roleId = item.Id }, null) @:|
+                            @Html.ActionLink("Delete", "Delete", "Role", new { roleId = item.Id }, null)
+                        }
                     </td>
                 </tr>
             }

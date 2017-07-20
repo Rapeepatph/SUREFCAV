@@ -27,8 +27,11 @@
                         @item.Role
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", "Account", new { userId = item.id }, null)  | 
+                        @if (item.UserName != "sysAdmin")
+                        {
+                            @Html.ActionLink("Edit", "Edit", "Account", new { userId = item.id }, null) @:|
                         @Html.ActionLink("Delete", "Delete", "Account", new { userId = item.id },null)
+                        }
                     </td>
                 </tr>
             }

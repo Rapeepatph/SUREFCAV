@@ -35,12 +35,13 @@
         <div class="col-md-10">
             @*@Html.DropDownList("")*@
             @*@Html.DropDownListFor(m =>m.Name,ViewBag.Name.Items,"Name"))*@
-            <select class="form-control" name="Name">
+            @*<select class="form-control" name="Name">
                 @foreach(var item in ViewBag.Name.Items)
                 {
                     <option value="@item.Name">@item.Name</option>
                 }
-            </select>
+            </select>*@
+            @Html.DropDownList("Name", ViewBag.Name as SelectList, "--select Role--", new { @class = "form-control" })
         </div>
     </div>
     <!--Ends Here-->

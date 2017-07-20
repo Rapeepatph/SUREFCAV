@@ -1096,7 +1096,7 @@ $scope.diffLatLngChartConfig = {
 
         color = getColor(ssrList, adsbList, sic);
 
-        var line = getLine(list, lat, lng, sic, color, 'selected', 6, null);
+        var line = getLine(list, lat, lng, sic, color, 'selected', 2, null);
         if (line != null) dynamicPath.push(line);
         
         var aList = sicList.split('_');
@@ -1216,7 +1216,7 @@ $scope.diffLatLngChartConfig = {
                 $scope.adsbGeoHeightChart.push(geoPlot);
                 var nucpPlot = [getTimeForChart(ap[0]), ap[9]];
                 $scope.nucpChart.push(nucpPlot);
-                var speedPlot = [getTimeForChart(ap[0]), ap[18]];
+                var speedPlot = [getTimeForChart(ap[0]), ap[11]];
                 $scope.adsbGroundSpeedChart.push(speedPlot);
 
                 insertDataDistibution(ap[9]);
@@ -1305,7 +1305,7 @@ $scope.diffLatLngChartConfig = {
                 $scope.ssrBaroHeightChart.push(baroPlot);
                 var anglePlot = [getTimeForChart(ap[0]), findAngle(ap[11], ap[12])];
                 $scope.ssrAngleChart.push(anglePlot);
-                var speedPlot = [getTimeForChart(ap[0]), ap[18]];
+                var speedPlot = [getTimeForChart(ap[0]), ap[11]];
                 $scope.ssrGroundSpeedData.push(speedPlot);
 
                 addDataToChart8(ap[0], ap[14], ap[15],ap[17]);
@@ -1391,7 +1391,7 @@ $scope.diffLatLngChartConfig = {
                 staticitems.push(plot);
                 var circlePlot = {
                     type: 'circle',
-                    radius: 300 * 1000,
+                    radius: 300 * 1000,            //meters
                     latlngs: {
                         lat: element.Lat,
                         lng: element.Lng
@@ -1425,7 +1425,7 @@ $scope.diffLatLngChartConfig = {
                 staticitems.push(plot);
                 var circlePlot = {
                     type: 'circle',
-                    radius: 250 * 1000,
+                    radius: 250 * 1000,    //meters
                     latlngs: {
                         lat: element.Lat,
                         lng: element.Lng
@@ -1610,7 +1610,8 @@ $scope.diffLatLngChartConfig = {
         {
             $scope.detailLat = args.model.lat.toFixed(2);
             $scope.detailLng = args.model.lng.toFixed(2);
-            $scope.detailSic = args.model.sic;
+            var nameSic = getNameBySIC(args.model.sic);
+            $scope.detailSic = nameSic[0].Name + '(' + args.model.sic+')';
             $scope.detailNucp = args.model.nucp;
             $scope.detailCat = args.model.cat;
             $scope.detailDatetime = args.model.dt;

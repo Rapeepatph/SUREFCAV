@@ -190,7 +190,14 @@ namespace SUREF.Controllers
             EditModel.UserName = user.UserName;
             EditModel.Email = user.Email;
             EditModel.Role = role.Count == 0 ? "This user is not assigned role" : role[0];
-            ViewBag.Name = new SelectList(context.Roles.ToList(),"Name","Name",role);
+            if (role.Count != 0)
+            {
+                ViewBag.Name = new SelectList(context.Roles.Where(x=>x.Name!="sysAdmin").ToList(), "Name", "Name", role[0]);
+            }
+            else
+            {
+                ViewBag.Name = new SelectList(context.Roles.Where(x => x.Name != "sysAdmin").ToList(), "Name", "Name");
+            }
             return View(EditModel);
             
             
@@ -246,7 +253,7 @@ namespace SUREF.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(context.Roles.Where(x => x.Name != "sysAdmin").ToList(), "Name", "Name");
             return View();
         }
 
@@ -263,18 +270,21 @@ namespace SUREF.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    //Assign Role to user Here 
-                    await this.UserManager.AddToRoleAsync(user.Id, model.Name);
-                    //Ends Here
+                    if (!String.IsNullOrEmpty(model.Name))
+                    {
+                        //Assign Role to user Here 
+                        await this.UserManager.AddToRoleAsync(user.Id, model.Name);
+                        //Ends Here
+                    }
                     //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("ListUser");
                 }
                 AddErrors(result);
             }
@@ -524,7 +534,7 @@ namespace SUREF.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Landing", "Summary");
         }
 
         //

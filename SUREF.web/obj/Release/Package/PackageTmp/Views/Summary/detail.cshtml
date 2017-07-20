@@ -16,17 +16,17 @@
                     <td data-title="'TimeTo'" class="text-center" sortable="'TimeTo'" filter="{TimeTo: 'text'}" ng-init="timeTo=getDate(row.TimeTo)">{{row.TimeTo}}</td>
                     @if (ViewBag.Topic == "R2")
                     {
-                        <td data-title="'R2_5M'" class="text-center" sortable="'R2_5M'" filter="{R2_5M: 'number'}">
+                        <td data-title="'R2_5M (%)'" class="text-center" sortable="'R2_5M'" filter="{R2_5M: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R2_5M}}
+                                {{row.R2_5M*100 |number:fractionsize(row.R2_5M)}}
                             </a>
                         </td>
                     }
                     else if (ViewBag.Topic == "R2R")
                     {
-                        <td data-title="'R2_5R'" class="text-center" sortable="'R2_5R'" filter="{R2_5R: 'number'}">
+                        <td data-title="'R2_5R (%)'" class="text-center" sortable="'R2_5R'" filter="{R2_5R: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank"> 
-                                {{row.R2_5R}}
+                                {{row.R2_5R*100 |number:fractionsize(row.R2_5R)}}
                             </a>
                         </td>
                     }
@@ -40,17 +40,17 @@
                     }
                     else if (ViewBag.Topic == "R7")
                     {
-                        <td data-title="'R7_5M'" class="text-center" sortable="'R7_5M'" filter="{R7_5M: 'number'}">
+                        <td data-title="'R7_5M(%)'" class="text-center" sortable="'R7_5M'" filter="{R7_5M: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R7_5M}} 
+                                {{row.R7_5M*100|number:fractionsize(row.R7_5M)}} 
                             </a>
                         </td>
                     }
                     else if (ViewBag.Topic == "R7R")
                     {
-                        <td data-title="'R7_5R'" class="text-center" sortable="'R7_5R'" filter="{R7_5R: 'number'}">
+                        <td data-title="'R7_5R (%)'" class="text-center" sortable="'R7_5R'" filter="{R7_5R: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R7_5R}}
+                                {{row.R7_5R*100|number:fractionsize(row.R7_5R)}}
                             </a>
                         </td>
                     }
@@ -72,25 +72,25 @@
                     }
                     else if (ViewBag.Topic == "R14")
                     {
-                        <td data-title="'R14_5M'" class="text-center" sortable="'R14_5M'" filter="{R14_5M: 'number'}">
+                        <td data-title="'R14_5M(%)'" class="text-center" sortable="'R14_5M'" filter="{R14_5M: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R14_5M}}
+                                {{row.R14_5M*100 |number:fractionsize(row.R14_5M)}}
                             </a>
                         </td>
                     }
                     else if (ViewBag.Topic == "R14R")
                     {
-                        <td data-title="'R14_5R'" class="text-center" sortable="'R14_5R'" filter="{R14_5R: 'number'}">
+                        <td data-title="'R14_5R(%)'" class="text-center" sortable="'R14_5R'" filter="{R14_5R: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R14_5R}}
+                                {{row.R14_5R*100 |number:fractionsize(row.R14_5R)}}
                             </a>
                         </td>
                     }
                     else if (ViewBag.Topic == "R4")
                     {
-                        <td data-title="'R4 (Km.)'" class="text-center" sortable="'R4'" filter="{R4: 'number'}"> 
+                        <td data-title="'R4 (m.)'" class="text-center" sortable="'R4'" filter="{R4: 'number'}"> 
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R4}}
+                                {{row.R4*1000}}
                             </a>
                         </td>
                     }

@@ -10,6 +10,14 @@
         $scope.dt = d.format("YYYY/MM/DD HH:mm:ss.SSS");
         return d.format("YYYY-MM-DD ");
     };
+    $scope.fractionsize = function (input) {
+        if (input == 1) {
+            return 0;
+        }
+        else {
+            return 2;
+        }
+    }
     $scope.btnmsg = function (data) {
         return data == 1 ? 'Included' : 'Excluded';
     }

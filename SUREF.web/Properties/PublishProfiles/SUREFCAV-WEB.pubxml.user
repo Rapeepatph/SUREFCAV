@@ -109,7 +109,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2017 16:11:38</publishTime>
     </File>
     <File Include="bin/SUREF.dll">
-      <publishTime>07/18/2017 10:32:36</publishTime>
+      <publishTime>07/20/2017 16:19:54</publishTime>
     </File>
     <File Include="bin/SUREF.Repositories.dll">
       <publishTime>06/15/2017 16:11:38</publishTime>
@@ -454,7 +454,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/17/2016 14:57:00</publishTime>
     </File>
     <File Include="Scripts/app/mapFix.js">
-      <publishTime>06/16/2017 09:51:07</publishTime>
+      <publishTime>07/20/2017 15:28:37</publishTime>
     </File>
     <File Include="Scripts/app/search.js">
       <publishTime>06/23/2017 08:58:13</publishTime>
@@ -466,7 +466,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/07/2017 13:57:56</publishTime>
     </File>
     <File Include="Scripts/app/summaryDetails.js">
-      <publishTime>06/08/2017 08:40:32</publishTime>
+      <publishTime>07/20/2017 10:40:52</publishTime>
     </File>
     <File Include="Scripts/bootstrap-toggle.min.js">
       <publishTime>03/17/2016 14:50:38</publishTime>
@@ -2815,7 +2815,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2017 15:03:34</publishTime>
     </File>
     <File Include="Views/Account/Edit.cshtml">
-      <publishTime>07/17/2017 15:03:22</publishTime>
+      <publishTime>07/19/2017 10:14:26</publishTime>
     </File>
     <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
       <publishTime>11/01/2016 09:11:24</publishTime>
@@ -2830,13 +2830,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2016 12:58:32</publishTime>
     </File>
     <File Include="Views/Account/ListUser.cshtml">
-      <publishTime>07/17/2017 15:09:25</publishTime>
+      <publishTime>07/19/2017 15:30:29</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
       <publishTime>07/14/2017 09:43:53</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>07/14/2017 10:56:56</publishTime>
+      <publishTime>07/19/2017 10:21:40</publishTime>
     </File>
     <File Include="Views/Account/RegisterRole.cshtml">
       <publishTime>07/13/2017 18:11:55</publishTime>
@@ -2914,7 +2914,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2017 09:58:18</publishTime>
     </File>
     <File Include="Views/Role/Index.cshtml">
-      <publishTime>07/18/2017 09:32:23</publishTime>
+      <publishTime>07/19/2017 15:28:36</publishTime>
     </File>
     <File Include="Views/Search/Index.cshtml">
       <publishTime>06/21/2017 09:50:40</publishTime>
@@ -2926,13 +2926,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2016 12:58:32</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/17/2017 15:08:57</publishTime>
+      <publishTime>07/19/2017 13:58:52</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>07/14/2017 09:43:53</publishTime>
     </File>
     <File Include="Views/Summary/detail.cshtml">
-      <publishTime>06/05/2017 14:36:45</publishTime>
+      <publishTime>07/20/2017 10:51:10</publishTime>
     </File>
     <File Include="Views/Summary/History.cshtml">
       <publishTime>05/30/2017 14:59:11</publishTime>

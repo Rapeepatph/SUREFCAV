@@ -22,13 +22,13 @@ namespace SUREF
             ApplicationDbContext context = new ApplicationDbContext();
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            if (!roleManager.RoleExists("Admin"))
+            if (!roleManager.RoleExists("sysAdmin"))
             {
                 var role = new IdentityRole();
-                role.Name = "Admin";
+                role.Name = "sysAdmin";
                 roleManager.Create(role);
                 
-                string userEmail = "sysAdminSUREF@gmail.com";
+                string userEmail = "sysAdmin";
                 string passwd = "P@ssw0rd";
                 var user = new ApplicationUser();
                 user.UserName = userEmail;
@@ -37,7 +37,7 @@ namespace SUREF
                 var chkUser = UserManager.Create(user, passwd);
                 if (chkUser.Succeeded)
                 {
-                    var result = UserManager.AddToRole(user.Id, "Admin");
+                    var result = UserManager.AddToRole(user.Id, "sysAdmin");
                 }
             }
         }

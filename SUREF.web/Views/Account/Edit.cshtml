@@ -21,12 +21,13 @@
             <div class="form-group">
                @Html.Label("Select Your User Type", new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                <select class="form-control" name="Role">
+                @*<select class="form-control" name="Role">
                     @foreach (var item in ViewBag.Name.Items)
                     {
                         <option value="@item.Name">@item.Name</option>
                     }
-                </select>
+                </select>*@
+                @Html.DropDownList("Role",ViewBag.Name as SelectList,"--select Role--",new { @class="form-control"})
             </div>
             </div>
     

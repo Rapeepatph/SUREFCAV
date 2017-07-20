@@ -68,7 +68,7 @@ namespace SUREF.Controllers
         {
             try
             {
-                var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year&&x.HasPlotInCAV==1).ToList();
+                var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year&&x.HasPlotInCAV==1&&x.AircraftID!="X").ToList();
                 var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
                 if (typ=="ADS-B")
                 {
@@ -142,6 +142,7 @@ namespace SUREF.Controllers
                 return null;
             }
         }
+
         [System.Web.Http.HttpGet]
         public JsonResult GetMappedFlight(DateTime dt, string typ)
         {
@@ -222,6 +223,7 @@ namespace SUREF.Controllers
             if (disposing) app.Dispose();
             base.Dispose(disposing);
         }
+        
     }
     public class SummaryApiController : ApiController
     {
