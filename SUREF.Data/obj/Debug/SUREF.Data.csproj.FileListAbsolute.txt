@@ -17,4 +17,3 @@ C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\bi
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\obj\Debug\SUREF.Data.dll
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\obj\Debug\SUREF.Data.pdb
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\obj\Debug\SUREF.Data.csprojResolveAssemblyReference.cache
-C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Data\obj\Debug\SUREF.Data.csprojResolveAssemblyReference.cache

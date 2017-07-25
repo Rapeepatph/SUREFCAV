@@ -60,6 +60,7 @@
     <Property Name="ProcessRound" Type="datetime" Nullable="false" />
     <Property Name="HasPlotInCAV" Type="int" Nullable="false" />
     <Property Name="Indicator" Type="int" />
+    <Property Name="Diagnose" Type="text" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'SUREFCAV.dbo.FlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -177,6 +178,7 @@ warning 6002: The table/view 'SUREFCAV.dbo.FlightView' does not have a primary k
     <Property Name="ProcessRound" Type="datetime" Nullable="false" />
     <Property Name="HasPlotInCAV" Type="int" Nullable="false" />
     <Property Name="Indicator" Type="int" />
+    <Property Name="Diagnose" Type="text" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'SUREFCAV.dbo.MappedFlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -299,7 +301,8 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
     [FlightView].[CreateTime] AS [CreateTime], 
     [FlightView].[ProcessRound] AS [ProcessRound], 
     [FlightView].[HasPlotInCAV] AS [HasPlotInCAV], 
-    [FlightView].[Indicator] AS [Indicator]
+    [FlightView].[Indicator] AS [Indicator], 
+    [FlightView].[Diagnose] AS [Diagnose]
     FROM [dbo].[FlightView] AS [FlightView]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="MappedFlightView" EntityType="Self.MappedFlightView" store:Type="Views" store:Schema="dbo">

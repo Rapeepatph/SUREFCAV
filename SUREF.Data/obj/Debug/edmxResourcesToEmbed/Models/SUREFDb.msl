@@ -4,6 +4,7 @@
     <EntitySetMapping Name="FlightViews">
       <EntityTypeMapping TypeName="SUREFDb.FlightView">
         <MappingFragment StoreEntitySet="FlightView">
+          <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
           <ScalarProperty Name="Indicator" ColumnName="Indicator" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="SensorID" ColumnName="SensorID" />
@@ -106,6 +107,7 @@
     <EntitySetMapping Name="Flights">
       <EntityTypeMapping TypeName="SUREFDb.Flight">
         <MappingFragment StoreEntitySet="Flight">
+          <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
           <ScalarProperty Name="Indicator" ColumnName="Indicator" />
           <ScalarProperty Name="HasPlotInCAV" ColumnName="HasPlotInCAV" />
           <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />

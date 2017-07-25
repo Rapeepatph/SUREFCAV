@@ -836,7 +836,7 @@ $scope.groundSpeedChartConfig = {
 
     },
     title: {
-        text: 'Ground Speed Versus Time of Flight ID ' + AircraftID
+        text: 'Track Velocity Versus Time of Flight ID ' + AircraftID
     },
     series: [
         {
@@ -1618,22 +1618,33 @@ $scope.diffLatLngChartConfig = {
             $scope.detailHeight = args.model.height;
             $scope.detailClimbRate = args.model.climbRate;
             $scope.detailAngle = args.model.angle;
-            $scope.detailAllDistance = '';
+            $scope.detailAllDistance = [];
             $scope.detailCallSign = args.model.callsign;
             for (var i = 0; i < args.model.siclist.length; i++) {
                 var obj = getNameBySIC(args.model.siclist[i]);
                 var status = 'A';
                 var distance = getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
                 if (args.model.sic == obj[0].SIC) {
-                     status = 'S';
+                    status = 'S';
                 }
-                $scope.detailAllDistance += obj[0].Name +"("+status+ ") : " + distance+" km"+'\r\n';
+                $scope.detailAllDistance.push({
+                    name: obj[0].Name,
+                    selected: status,
+                    dist: distance,
+                    typ: obj[0].Type.substring(0, 4)
+                });
             }
             if (!inArray(args.model.sic, args.model.siclist)) {
                 var obj = getNameBySIC(args.model.sic);
                 var status = 'S';
                 var distance = getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
-                $scope.detailAllDistance += obj[0].Name + "(" + status + ") : " + distance + " km" + '\r\n';
+                $scope.detailAllDistance.push({
+                    name: obj[0].Name,
+                    selected: status,
+                    dist: distance,
+                    typ: obj[0].Type.substring(0,4)
+                });
+                //$scope.detailAllDistance += obj[0].Name + "(" + status + ") : " + distance + " km" + '\r\n';
             }
             var sicList = args.model.siclist.join('_');
             createPathToSur(args.model.lat, args.model.lng, args.model.sic, sicList, args.model.cat)

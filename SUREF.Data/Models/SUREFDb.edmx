@@ -65,6 +65,7 @@
           <Property Name="ProcessRound" Type="datetime" Nullable="false" />
           <Property Name="HasPlotInCAV" Type="int" Nullable="false" />
           <Property Name="Indicator" Type="int" />
+          <Property Name="Diagnose" Type="text" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SUREFCAV.dbo.FlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -182,6 +183,7 @@ warning 6002: The table/view 'SUREFCAV.dbo.FlightView' does not have a primary k
           <Property Name="ProcessRound" Type="datetime" Nullable="false" />
           <Property Name="HasPlotInCAV" Type="int" Nullable="false" />
           <Property Name="Indicator" Type="int" />
+          <Property Name="Diagnose" Type="text" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SUREFCAV.dbo.MappedFlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -304,7 +306,8 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
     [FlightView].[CreateTime] AS [CreateTime], 
     [FlightView].[ProcessRound] AS [ProcessRound], 
     [FlightView].[HasPlotInCAV] AS [HasPlotInCAV], 
-    [FlightView].[Indicator] AS [Indicator]
+    [FlightView].[Indicator] AS [Indicator], 
+    [FlightView].[Diagnose] AS [Diagnose]
     FROM [dbo].[FlightView] AS [FlightView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="MappedFlightView" EntityType="Self.MappedFlightView" store:Type="Views" store:Schema="dbo">
@@ -462,6 +465,7 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
           <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="HasPlotInCAV" Type="Int32" Nullable="false" />
           <Property Name="Indicator" Type="Int32" />
+          <Property Name="Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="MappedFlightView">
           <Key>
@@ -587,6 +591,7 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
           <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="HasPlotInCAV" Type="Int32" Nullable="false" />
           <Property Name="Indicator" Type="Int32" />
+          <Property Name="Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -597,6 +602,7 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
           <EntitySetMapping Name="FlightViews">
             <EntityTypeMapping TypeName="SUREFDb.FlightView">
               <MappingFragment StoreEntitySet="FlightView">
+                <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
                 <ScalarProperty Name="Indicator" ColumnName="Indicator" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SensorID" ColumnName="SensorID" />
@@ -699,6 +705,7 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
           <EntitySetMapping Name="Flights">
             <EntityTypeMapping TypeName="SUREFDb.Flight">
               <MappingFragment StoreEntitySet="Flight">
+                <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
                 <ScalarProperty Name="Indicator" ColumnName="Indicator" />
                 <ScalarProperty Name="HasPlotInCAV" ColumnName="HasPlotInCAV" />
                 <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />

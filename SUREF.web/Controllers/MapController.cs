@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace SUREF.Controllers
@@ -169,8 +170,9 @@ namespace SUREF.Controllers
         {
             try
             {
-                //string path = ControllerContext.HttpContext.Server.MapPath("~/Data/" + sensor + "/" + date + "/" + id);
-                string path = "C:\\tempcav\\" + sensor + "\\" + date + "\\" + id;
+                //string path = "C:\\tempcav\\" + sensor + "\\" + date + "\\" + id;
+                string pathFolder = WebConfigurationManager.AppSettings["PathTempCAV"];
+                string path = pathFolder + sensor + "\\" + date + "\\" + id;
                 List<List<object>> result = GetJsonData.getData(path,date);
                 if (result == null)
                 {

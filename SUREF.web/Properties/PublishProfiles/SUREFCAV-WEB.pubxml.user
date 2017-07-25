@@ -106,16 +106,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2016 12:58:36</publishTime>
     </File>
     <File Include="bin/SUREF.Data.dll">
-      <publishTime>06/15/2017 16:11:38</publishTime>
+      <publishTime>07/24/2017 14:52:45</publishTime>
     </File>
     <File Include="bin/SUREF.dll">
-      <publishTime>07/20/2017 16:19:54</publishTime>
+      <publishTime>07/24/2017 14:52:47</publishTime>
     </File>
     <File Include="bin/SUREF.Repositories.dll">
-      <publishTime>06/15/2017 16:11:38</publishTime>
+      <publishTime>07/24/2017 14:52:45</publishTime>
     </File>
     <File Include="bin/SUREF.Services.dll">
-      <publishTime>06/15/2017 16:11:38</publishTime>
+      <publishTime>07/24/2017 14:52:45</publishTime>
     </File>
     <File Include="bin/SurveillanceDataKeeper.dll">
       <publishTime>01/24/2017 16:38:42</publishTime>
@@ -454,7 +454,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/17/2016 14:57:00</publishTime>
     </File>
     <File Include="Scripts/app/mapFix.js">
-      <publishTime>07/20/2017 15:28:37</publishTime>
+      <publishTime>07/24/2017 13:33:39</publishTime>
     </File>
     <File Include="Scripts/app/search.js">
       <publishTime>06/23/2017 08:58:13</publishTime>
@@ -2857,7 +2857,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/01/2016 09:17:59</publishTime>
     </File>
     <File Include="Views/Diag/Index.cshtml">
-      <publishTime>05/11/2017 09:22:00</publishTime>
+      <publishTime>07/21/2017 10:40:27</publishTime>
     </File>
     <File Include="Views/Flight/Index.cshtml">
       <publishTime>02/10/2017 10:56:57</publishTime>
@@ -2893,10 +2893,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2017 14:23:02</publishTime>
     </File>
     <File Include="Views/Map/Details.cshtml">
-      <publishTime>05/11/2017 08:41:09</publishTime>
+      <publishTime>07/24/2017 13:42:03</publishTime>
     </File>
     <File Include="Views/Map/Index.cshtml">
-      <publishTime>06/16/2017 14:31:11</publishTime>
+      <publishTime>07/24/2017 13:42:57</publishTime>
     </File>
     <File Include="Views/Map/testMap.cshtml">
       <publishTime>06/13/2017 14:21:22</publishTime>
@@ -2950,7 +2950,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2016 12:58:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/30/2017 13:36:25</publishTime>
+      <publishTime>07/24/2017 14:52:47</publishTime>
     </File>
   </ItemGroup>
 </Project>

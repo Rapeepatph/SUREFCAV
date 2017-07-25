@@ -109,9 +109,14 @@ height: 100%;
                         <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-9">
-                        <h4>Path Status  </h4>
-                        <a>All available :</a><br />
-                        <b>{{detailAllDistance}}</b>
+                        <h4>Sensor Information </h4>
+                        <p>All available :</p>
+                        <ul style="padding-left:10px" ng-repeat="x in detailAllDistance | orderBy:'dist'">
+                            <li ng-class="{'text-danger':x.selected=='S'}">
+                                <p>{{x.name}}({{x.typ}})</p>
+                                <p>:{{x.dist}} km.</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

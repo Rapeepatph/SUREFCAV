@@ -122,11 +122,15 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <i class="fa fa-info-circle fa-1x" aria-hidden="true"></i>
-                                <b>  Path Status  </b>
+                                <b>  Sensor Information  </b>
                             </div>
-                            <div class="col-xs-9">
-                                <a>All available :</a><br />
-                                <b>{{detailAllDistance}}</b>
+                            <div class="col-xs-12">
+                                <ul style="padding-left:10px"  ng-repeat="x in detailAllDistance | orderBy:'dist'">
+                                    <li ng-class="{'text-danger':x.selected=='S'}">
+                                        <p >{{x.name}}({{x.typ}})</p>
+                                        <p >:{{x.dist}} km.</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -753,7 +757,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-warning ">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Ground Speed </h3>
+                            <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>  Track Velocity </h3>
                         </div>
                         <div class="panel-body">
                             <highchart id="chart12" config="groundSpeedChartConfig"></highchart>
