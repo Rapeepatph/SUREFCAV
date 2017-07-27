@@ -11,7 +11,7 @@ namespace SUREF.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Landing", "Summary");
         }
         public ActionResult About()
         {

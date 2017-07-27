@@ -1104,7 +1104,7 @@ $scope.diffLatLngChartConfig = {
             aList.forEach(function (entry) {
                 if (entry != sic) {
                     color = getColor(ssrList, adsbList, entry);
-                    var templine = getLine(list, lat, lng, entry, color, 'available', 3, '5,10');
+                    var templine = getLine(list, lat, lng, entry, color, 'available', 2, '8,4');
                     if (templine != null) dynamicPath.push(templine);
                 }
             });
@@ -1447,15 +1447,15 @@ $scope.diffLatLngChartConfig = {
     var icons = {
         blue:{
             type: 'div',
-            iconSize: [10, 10],
+            iconSize: [6, 6],
             className: 'blue',
-            iconAnchor:  [5, 5]
+            iconAnchor:  [3, 3]
         },
         red: {
             type: 'div',
-            iconSize: [10, 10],
+            iconSize: [6, 6],
             className: 'red',
-            iconAnchor:  [5, 5]
+            iconAnchor:  [3, 3]
         },
         adsb: {
             iconUrl: '/images/marker-icon.png',
@@ -1622,6 +1622,13 @@ $scope.diffLatLngChartConfig = {
             $scope.detailCallSign = args.model.callsign;
             for (var i = 0; i < args.model.siclist.length; i++) {
                 var obj = getNameBySIC(args.model.siclist[i]);
+                var typname = '';
+                if (obj[0].Type.substring(0, 4) == 'MSSR') {
+                    typname = 'SSR';
+                }
+                else {
+                    typname = 'ADS-B';
+                }
                 var status = 'A';
                 var distance = getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
                 if (args.model.sic == obj[0].SIC) {
@@ -1631,7 +1638,7 @@ $scope.diffLatLngChartConfig = {
                     name: obj[0].Name,
                     selected: status,
                     dist: distance,
-                    typ: obj[0].Type.substring(0, 4)
+                    typ: typname
                 });
             }
             if (!inArray(args.model.sic, args.model.siclist)) {

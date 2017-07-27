@@ -102,7 +102,7 @@ height: 100%;
                 </div>
             </div>
         </div>
-        <div class="panel panel-success">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
@@ -111,8 +111,8 @@ height: 100%;
                     <div class="col-xs-9">
                         <h4>Sensor Information </h4>
                         <p>All available :</p>
-                        <ul style="padding-left:10px" ng-repeat="x in detailAllDistance | orderBy:'dist'">
-                            <li ng-class="{'text-danger':x.selected=='S'}">
+                        <ul style="padding-left:10px" ng-repeat="x in detailAllDistance | orderBy:'dist/1'">
+                            <li ng-class="{'text-success':x.selected=='S'}">
                                 <p>{{x.name}}({{x.typ}})</p>
                                 <p>:{{x.dist}} km.</p>
                             </li>

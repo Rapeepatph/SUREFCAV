@@ -312,7 +312,7 @@ namespace SUREF.Controllers
             }
             //Assign Role to user here
             await this.UserManager.AddToRoleAsync(updateId, model.Name);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ListUser", "Account");
         }
         //
         // GET: /Account/ConfirmEmail
@@ -591,7 +591,7 @@ namespace SUREF.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Landing", "Summary");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
