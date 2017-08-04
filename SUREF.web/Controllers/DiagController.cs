@@ -28,52 +28,58 @@ namespace SUREF.Controllers
             string sensorName = typ == "SSR/MRT" ? "MRT-TopSky" : typ;
             var sensor = app.SensorView.Query(a => a.Name == sensorName).SingleOrDefault();
             var flight = app.FlightView.Query(x => x.SensorID == sensor.ID && x.DateofFlight.DayOfYear == dt.DayOfYear && x.AircraftID == id).FirstOrDefault();
-            var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
-            var mapped = new MappedFlightView();
-            if (sensorName== "MRT-TopSky")
+            //var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
+            using (SUREFEntities db = new SUREFEntities())
             {
-                 mapped = MappedFlights.Where(b => b.FlightID == flight.ID).FirstOrDefault();
-            }
-            else if(sensorName=="ADS-B")
-            {
-                mapped = MappedFlights.Where(b => b.AnotherFlightID == flight.ID).FirstOrDefault();
-            }
-            if(mapped != null)
-            {
-                var DeserializeDatas = JsonConvert.DeserializeObject<Dictionary<long, Dictionary<string, string>>>(mapped.R4_H_Diagnose);
-                var _datas = new List<DiagJsonModel>();
-                int count = 0;
-                string[] refPoints = new string[] { "REF_", "REF1_", "REF2_" };
-                foreach (var data in DeserializeDatas)
+                var MappedFlights = db.DMappedFlightViews.Where(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
+
+
+                var mapped = new DMappedFlightView();
+                if (sensorName == "MRT-TopSky")
                 {
-                    //var item = new DiagJsonModel();
-                    //DateTime dtime = new DateTime(data.Key);
-                    //item.Time = dtime.ToString(" HH:mm:ss.fff ");
-                    //item.LAT = data.Value.ContainsKey("LAT") ? data.Value["LAT"] : null;
-                    //item.LNG=data.Value.ContainsKey("LNG")? data.Value["LNG"] : null;
-                    //item.REF_LAT = data.Value.ContainsKey("REF_LAT") ? string.Format("{0:0.##}", data.Value["REF_LAT"] ): null;
-                    //item.REF_LNG = data.Value.ContainsKey("REF_LNG") ? data.Value["REF_LNG"] : null;
-                    //item.REF1_LAT = data.Value.ContainsKey("REF1_LAT") ? data.Value["REF1_LAT"] : null;
-                    //item.REF1_LNG = data.Value.ContainsKey("REF1_LNG") ? data.Value["REF1_LNG"] : null;
-                    //item.REF2_LAT = data.Value.ContainsKey("REF2_LAT") ? data.Value["REF_LAT"] : null;
-                    //item.REF2_LNG = data.Value.ContainsKey("REF2_LNG") ? data.Value["REF2_LNG"] : null;
-                    //_datas.Add(item);
-                    //foreach (string refPoint in refPoints)
-                    //{
-                    //    if (data.Value.ContainsKey(refPoint + "LAT"))
-                    //    {
-                    //        var item = new DiagJsonModel();
-                    //        item = CreatedObj(data.Value["LAT"], data.Value["LNG"], data.Value[refPoint + "LAT"], data.Value[refPoint + "LNG"], data.Key, count);
-                    //        _datas.Add(item);
-                    //    }
-                    //}
-                    //count++;
-                    var item = new DiagJsonModel();
-                    item = CreatedObj(data.Value,data.Key,count);
-                    _datas.Add(item);
-                    count++;
+                    mapped = MappedFlights.Where(b => b.FlightID == flight.ID).FirstOrDefault();
                 }
-                return Json(_datas, JsonRequestBehavior.AllowGet);
+                else if (sensorName == "ADS-B")
+                {
+                    mapped = MappedFlights.Where(b => b.AnotherFlightID == flight.ID).FirstOrDefault();
+                }
+                if (mapped != null)
+                {
+                    var DeserializeDatas = JsonConvert.DeserializeObject<Dictionary<long, Dictionary<string, string>>>(mapped.R4_H_Diagnose);
+                    var _datas = new List<DiagJsonModel>();
+                    int count = 0;
+                    string[] refPoints = new string[] { "REF_", "REF1_", "REF2_" };
+                    foreach (var data in DeserializeDatas)
+                    {
+                        //var item = new DiagJsonModel();
+                        //DateTime dtime = new DateTime(data.Key);
+                        //item.Time = dtime.ToString(" HH:mm:ss.fff ");
+                        //item.LAT = data.Value.ContainsKey("LAT") ? data.Value["LAT"] : null;
+                        //item.LNG=data.Value.ContainsKey("LNG")? data.Value["LNG"] : null;
+                        //item.REF_LAT = data.Value.ContainsKey("REF_LAT") ? string.Format("{0:0.##}", data.Value["REF_LAT"] ): null;
+                        //item.REF_LNG = data.Value.ContainsKey("REF_LNG") ? data.Value["REF_LNG"] : null;
+                        //item.REF1_LAT = data.Value.ContainsKey("REF1_LAT") ? data.Value["REF1_LAT"] : null;
+                        //item.REF1_LNG = data.Value.ContainsKey("REF1_LNG") ? data.Value["REF1_LNG"] : null;
+                        //item.REF2_LAT = data.Value.ContainsKey("REF2_LAT") ? data.Value["REF_LAT"] : null;
+                        //item.REF2_LNG = data.Value.ContainsKey("REF2_LNG") ? data.Value["REF2_LNG"] : null;
+                        //_datas.Add(item);
+                        //foreach (string refPoint in refPoints)
+                        //{
+                        //    if (data.Value.ContainsKey(refPoint + "LAT"))
+                        //    {
+                        //        var item = new DiagJsonModel();
+                        //        item = CreatedObj(data.Value["LAT"], data.Value["LNG"], data.Value[refPoint + "LAT"], data.Value[refPoint + "LNG"], data.Key, count);
+                        //        _datas.Add(item);
+                        //    }
+                        //}
+                        //count++;
+                        var item = new DiagJsonModel();
+                        item = CreatedObj(data.Value, data.Key, count);
+                        _datas.Add(item);
+                        count++;
+                    }
+                    return Json(_datas, JsonRequestBehavior.AllowGet);
+                }
             }
             return null;
         }

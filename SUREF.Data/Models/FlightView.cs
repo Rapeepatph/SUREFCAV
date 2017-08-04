@@ -70,6 +70,5 @@ namespace SUREF.Data.Models
         public System.DateTime ProcessRound { get; set; }
         public int HasPlotInCAV { get; set; }
         public Nullable<int> Indicator { get; set; }
-        public string Diagnose { get; set; }
     }
 }

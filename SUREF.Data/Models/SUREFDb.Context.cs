@@ -25,9 +25,10 @@ namespace SUREF.Data.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<FlightView> FlightViews { get; set; }
-        public virtual DbSet<MappedFlightView> MappedFlightViews { get; set; }
-        public virtual DbSet<SensorView> SensorViews { get; set; }
         public virtual DbSet<Flight> Flights { get; set; }
+        public virtual DbSet<FlightView> FlightViews { get; set; }
+        public virtual DbSet<SensorView> SensorViews { get; set; }
+        public virtual DbSet<DMappedFlightView> DMappedFlightViews { get; set; }
+        public virtual DbSet<MappedFlightView> MappedFlightViews { get; set; }
     }
 }

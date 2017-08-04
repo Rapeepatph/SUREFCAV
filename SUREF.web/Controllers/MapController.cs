@@ -14,6 +14,7 @@ namespace SUREF.Controllers
     [Authorize]
     public class MapController : Controller
     {
+        readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private App app = new App(testing: false);
         // GET: Map
         public ActionResult Index(string id,string date,string typ,DateTime dt)
@@ -173,15 +174,18 @@ namespace SUREF.Controllers
                 //string path = "C:\\tempcav\\" + sensor + "\\" + date + "\\" + id;
                 string pathFolder = WebConfigurationManager.AppSettings["PathTempCAV"];
                 string path = pathFolder + sensor + "\\" + date + "\\" + id;
+                logger.Info("path=" + path);
                 List<List<object>> result = GetJsonData.getData(path,date);
+                logger.Info("resultformGetJson="+result.Count());
                 if (result == null)
                 {
                     return Json(new { status = false }, JsonRequestBehavior.AllowGet);
                 }
                 return Json(result, JsonRequestBehavior.AllowGet);
             }
-            catch(Exception)
+            catch(Exception e)
             {
+                logger.Error("Error:"+e.Message);
                 return null;
             }
         }

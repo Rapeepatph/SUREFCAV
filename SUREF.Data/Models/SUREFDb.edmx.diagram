@@ -4,11 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c459e1916da04da2a1cfed8e776b2e37" Name="Diagram1" ZoomLevel="80">
-        <EntityTypeShape EntityType="SUREFDb.FlightView" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SUREFDb.MappedFlightView" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SUREFDb.SensorView" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SUREFDb.Flight" Width="1.5" PointX="5.375" PointY="3.75" />
+      <Diagram DiagramId="f9438e1c2cd54b569be0707826bb87da" Name="Diagram1">
+        <EntityTypeShape EntityType="SUREFDb.Flight" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUREFDb.FlightView" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUREFDb.SensorView" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUREFDb.DMappedFlightView" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SUREFDb.MappedFlightView" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

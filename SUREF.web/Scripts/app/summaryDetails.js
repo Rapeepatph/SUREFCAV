@@ -11,7 +11,7 @@
         return d.format("YYYY-MM-DD ");
     };
     $scope.fractionsize = function (input) {
-        if (input == 1) {
+        if (input == 1||input==0) {
             return 0;
         }
         else {

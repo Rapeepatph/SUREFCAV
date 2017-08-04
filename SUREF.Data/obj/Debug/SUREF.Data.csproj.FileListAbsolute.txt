@@ -17,3 +17,14 @@ C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\bi
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\obj\Debug\SUREF.Data.dll
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\obj\Debug\SUREF.Data.pdb
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Data\obj\Debug\SUREF.Data.csprojResolveAssemblyReference.cache
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREF\SUREF.Data\obj\Debug\SUREF.Data.csprojResolveAssemblyReference.cache
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\bin\Debug\SUREF.Data.dll.config
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\bin\Debug\SUREF.Data.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\bin\Debug\SUREF.Data.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\bin\Debug\EntityFramework.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\bin\Debug\EntityFramework.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\obj\Debug\SUREF.Data.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\obj\Debug\SUREF.Data.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Data\obj\Debug\SUREF.Data.csprojResolveAssemblyReference.cache

@@ -31,3 +31,14 @@ C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Reposit
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Repositories\obj\Debug\SUREF.Repositories.csprojResolveAssemblyReference.cache
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Repositories\obj\Debug\SUREF.Repositories.dll
 C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFCav\SUREF.Repositories\obj\Debug\SUREF.Repositories.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\SUREF.Repositories.dll.config
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\SUREF.Repositories.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\SUREF.Repositories.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\CCMS.Core.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\SUREF.Data.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\bin\Debug\SUREF.Data.pdb
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\obj\Debug\SUREF.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\obj\Debug\SUREF.Repositories.dll
+C:\Users\Rapeepatph\Documents\Visual Studio 2015\Projects\SUREFForP18\SUREF.Repositories\obj\Debug\SUREF.Repositories.pdb

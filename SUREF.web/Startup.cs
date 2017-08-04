@@ -7,14 +7,17 @@ using System.Linq;
 using Microsoft.AspNet.Identity;
 
 [assembly: OwinStartupAttribute(typeof(SUREF.Startup))]
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace SUREF
 {
     public partial class Startup
     {
+        
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
             createRolesandUsers();
+
         }
 
         private void createRolesandUsers()

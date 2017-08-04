@@ -49,17 +49,6 @@
                     }
                 },
                 overlays: {
-                    ssr: {
-                        type: 'group',
-                        name: 'SSR',
-                        visible: false
-                    },
-
-                    adsb: {
-                        type: 'group',
-                        name: 'ADS-B',
-                        visible: false
-                    },
                     track: {
                         type: 'group',
                         name: 'Track',

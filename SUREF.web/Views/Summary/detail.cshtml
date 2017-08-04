@@ -34,7 +34,7 @@
                     {
                         <td data-title="'R3_5M'" class="text-center" sortable="'R3_5M'" filter="{R3_5M: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R3_5M}}
+                                {{row.R3_5M|number:fractionsize(row.R3_5M)}}
                             </a>
                         </td>
                     }
@@ -58,7 +58,7 @@
                     {
                         <td data-title="'R8_5M (s.)'" class="text-center" sortable="'R8_5M'" filter="{R8_5M: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R8_5M}} 
+                                {{row.R8_5M|number:fractionsize(row.R8_5M)}} 
                             </a>
                         </td>
                     }
@@ -66,7 +66,7 @@
                     {
                         <td data-title="'R9_5M (s.)'" class="text-center" sortable="'R9_5M'" filter="{R9_5M: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R9_5M}} 
+                                {{row.R9_5M|number:fractionsize(row.R9_5M)}} 
                             </a>
                         </td>
                     }
@@ -90,7 +90,7 @@
                     {
                         <td data-title="'R4 (m.)'" class="text-center" sortable="'R4'" filter="{R4: 'number'}"> 
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R4*1000}}
+                                {{row.R4*1000|number:fractionsize(row.R4)}}
                             </a>
                         </td>
                     }
@@ -98,7 +98,7 @@
                     {
                         <td data-title="'R5 (NM.)'" class="text-center" sortable="'R5'" filter="{R5: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R5}} 
+                                {{row.R5|number:fractionsize(row.R5)}} 
                             </a>
                         </td>
                     }
@@ -106,7 +106,7 @@
                     {
                         <td data-title="'R11 (FL.)'" class="text-center" sortable="'R11'" filter="{R11: 'number'}">
                             <a href="/map/details/{{row.AircraftID}}?date={{selectedDate}}&topic=@ViewBag.Topic&typ=@ViewBag.Typ&dt={{dt}}&dtstring={{selectedateString}}"  target="_blank">
-                                {{row.R11}}
+                                {{row.R11|number:fractionsize(row.R11)}}
                             </a>
                         </td>
                     }

@@ -1,0 +1,220 @@
+INFO  2017-08-03 08:34:12,207  3611ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 08:34:12,207  3611ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 08:34:12,265  3669ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 08:34:12,271  3675ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 08:34:12,274  3678ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:12,274  3678ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:12,305  3709ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 08:34:12,336  3740ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 08:34:12,339  3743ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:22,011 13415ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 08:34:22,060 13464ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 08:34:22,063 13467ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:23,746 15150ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 08:34:23,775 15179ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 08:34:23,778 15182ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:24,970 16374ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 08:34:24,974 16378ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 08:34:25,023 16427ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 08:34:25,027 16431ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:25,028 16432ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 08:34:25,031 16435ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:25,051 16455ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 08:34:25,082 16486ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 08:34:25,085 16489ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 08:34:27,321 18725ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 08:34:27,357 18761ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 08:34:27,360 18764ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 09:18:35,172  4330ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 09:18:35,173  4331ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 09:18:35,242  4400ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 09:18:35,244  4402ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 09:18:35,253  4411ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 09:18:35,253  4411ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 09:18:35,289  4446ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 09:18:35,329  4486ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 09:18:35,332  4489ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 11:05:45,573  4202ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 11:05:45,573  4202ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 11:05:45,640  4269ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 11:05:45,642  4271ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 11:05:45,653  4282ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 11:05:45,662  4291ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 11:05:45,685  4315ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 11:05:45,713  4343ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 11:05:45,715  4345ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 12:59:09,841  4029ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 12:59:09,841  4029ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 12:59:09,893  4081ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 12:59:09,894  4082ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 12:59:09,900  4088ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 12:59:09,900  4088ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 12:59:09,925  4113ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 12:59:09,951  4139ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 12:59:09,954  4142ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 12:59:22,846 17034ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 12:59:22,895 17083ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 12:59:22,898 17086ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 12:59:24,252 18439ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 12:59:24,282 18469ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 12:59:24,285 18472ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 12:59:28,140 22328ms MapController          getTrack           - path=c:\tempcav\2\20170124\708028
+INFO  2017-08-03 12:59:28,140 22328ms MapController          getTrack           - path=c:\tempcav\1\20170124\708028
+INFO  2017-08-03 12:59:28,232 22420ms MapController          getTrack           - resultformGetJson=426
+INFO  2017-08-03 12:59:28,241 22429ms MapController          getTrack           - resultformGetJson=365
+INFO  2017-08-03 13:07:32,974  3920ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:07:32,973  3919ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 13:07:33,037  3983ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 13:07:33,042  3988ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:07:33,043  3989ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:07:33,047  3993ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:07:33,069  4015ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:07:33,100  4046ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:07:33,104  4050ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:07:34,462  5408ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:07:34,503  5449ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:07:34,507  5453ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:07:35,756  6702ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 13:07:35,784  6730ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:07:35,787  6733ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:07:41,066 12012ms MapController          getTrack           - path=c:\tempcav\1\20170124\71c210
+INFO  2017-08-03 13:07:41,066 12012ms MapController          getTrack           - path=c:\tempcav\2\20170124\71c210
+INFO  2017-08-03 13:08:26,581  4019ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 13:08:26,581  4019ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:08:26,637  4075ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 13:08:26,645  4083ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:08:26,647  4085ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:08:26,650  4088ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:08:26,670  4108ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:08:26,701  4139ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:08:26,704  4142ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:08:27,861  5299ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:08:27,905  5343ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:08:27,909  5347ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:08:29,307  6745ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 13:08:29,334  6772ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:08:29,337  6775ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:08:33,445 10883ms MapController          getTrack           - path=c:\tempcav\2\20170124\880016
+INFO  2017-08-03 13:08:33,445 10883ms MapController          getTrack           - path=c:\tempcav\1\20170124\880016
+INFO  2017-08-03 13:08:33,539 10977ms MapController          getTrack           - resultformGetJson=227
+INFO  2017-08-03 13:08:33,550 10988ms MapController          getTrack           - resultformGetJson=319
+INFO  2017-08-03 13:11:27,854  3878ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 13:11:27,855  3879ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:11:27,915  3939ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:11:27,916  3940ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 13:11:27,919  3943ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:11:27,919  3943ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:11:27,956  3980ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:11:27,990  4014ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:11:27,993  4017ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:11:29,599  5624ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:11:29,628  5652ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:11:29,631  5655ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:11:30,941  6966ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 13:11:30,993  7018ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:11:30,997  7022ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:11:35,682 11706ms MapController          getTrack           - path=c:\tempcav\1\20170124\71c210
+INFO  2017-08-03 13:11:35,683 11707ms MapController          getTrack           - path=c:\tempcav\2\20170124\71c210
+INFO  2017-08-03 13:11:35,767 11791ms MapController          getTrack           - resultformGetJson=5
+INFO  2017-08-03 13:11:35,769 11793ms MapController          getTrack           - resultformGetJson=5
+INFO  2017-08-03 13:34:35,365  4111ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:34:35,365  4111ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 13:34:35,425  4171ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:34:35,428  4174ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 13:34:35,433  4179ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:34:35,433  4179ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:34:35,465  4211ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:34:35,504  4250ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:34:35,508  4254ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:34:36,997  5743ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 13:34:37,023  5769ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:34:37,026  5772ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:34:38,227  6972ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 13:34:38,283  7029ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 13:34:38,286  7032ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 13:34:41,943 10689ms MapController          getTrack           - path=c:\tempcav\2\20170124\71c210
+INFO  2017-08-03 13:34:41,943 10689ms MapController          getTrack           - path=c:\tempcav\1\20170124\71c210
+INFO  2017-08-03 13:34:42,026 10772ms MapController          getTrack           - resultformGetJson=5
+INFO  2017-08-03 13:34:42,027 10773ms MapController          getTrack           - resultformGetJson=5
+INFO  2017-08-03 14:21:41,241  3977ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 14:21:41,241  3977ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 14:21:41,300  4036ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 14:21:41,305  4041ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 14:21:41,321  4057ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 14:21:41,327  4063ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 14:21:41,350  4086ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 14:21:41,395  4131ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 14:21:41,398  4134ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 14:21:43,297  6034ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 14:21:43,327  6064ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 14:21:43,331  6068ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 14:21:44,629  7365ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 14:21:44,656  7393ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 14:21:44,659  7396ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 14:21:47,561 10297ms MapController          getTrack           - path=c:\tempcav\2\20170124\06a030
+INFO  2017-08-03 14:21:47,561 10297ms MapController          getTrack           - path=c:\tempcav\1\20170124\06a030
+INFO  2017-08-03 14:21:47,656 10392ms MapController          getTrack           - resultformGetJson=
+INFO  2017-08-03 14:21:47,661 10397ms MapController          getTrack           - resultformGetJson=
+INFO  2017-08-03 15:34:59,461  4109ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 15:34:59,461  4109ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 15:34:59,519  4167ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 15:34:59,527  4175ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:34:59,543  4191ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:34:59,545  4193ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:34:59,594  4242ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 15:34:59,629  4277ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:34:59,632  4280ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:35:01,481  6129ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 15:35:01,536  6184ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:35:01,539  6187ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:35:02,644  7291ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 15:35:02,678  7325ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:35:02,681  7328ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:35:05,960 10608ms MapController          getTrack           - path=c:\tempcav\1\20170124\71c210
+INFO  2017-08-03 15:35:05,961 10609ms MapController          getTrack           - path=c:\tempcav\2\20170124\71c210
+INFO  2017-08-03 15:35:06,053 10701ms MapController          getTrack           - resultformGetJson=320
+INFO  2017-08-03 15:35:06,053 10701ms MapController          getTrack           - resultformGetJson=289
+INFO  2017-08-03 15:58:25,329  4442ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-03 15:58:25,329  4442ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 15:58:25,391  4504ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:58:25,392  4505ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-03 15:58:25,398  4511ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:58:25,398  4511ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:58:25,428  4541ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 15:58:25,455  4567ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:58:25,458  4570ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:58:27,771  6884ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-03 15:58:27,816  6929ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:58:27,820  6933ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:58:29,507  8620ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=R2
+INFO  2017-08-03 15:58:29,534  8647ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-03 15:58:29,537  8650ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-03 15:58:32,419 11532ms MapController          getTrack           - path=c:\tempcav\1\20170124\71c210
+INFO  2017-08-03 15:58:32,419 11532ms MapController          getTrack           - path=c:\tempcav\2\20170124\71c210
+INFO  2017-08-03 15:58:32,508 11621ms MapController          getTrack           - resultformGetJson=320
+INFO  2017-08-03 15:58:32,510 11623ms MapController          getTrack           - resultformGetJson=289
+INFO  2017-08-03 15:58:50,562 29674ms MapController          getTrack           - path=c:\tempcav\1\20170124\71c210
+INFO  2017-08-03 15:58:50,563 29675ms MapController          getTrack           - path=c:\tempcav\2\20170124\71c210
+INFO  2017-08-03 15:58:50,569 29681ms MapController          getTrack           - resultformGetJson=320
+INFO  2017-08-03 15:58:50,570 29682ms MapController          getTrack           - resultformGetJson=289
+INFO  2017-08-04 08:57:49,336  4531ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-04 08:57:49,336  4531ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-04 08:57:49,401  4595ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-04 08:57:49,406  4600ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-04 08:57:49,417  4612ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-04 08:57:49,426  4621ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-04 08:57:49,445  4639ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-04 08:57:49,479  4673ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-04 08:57:49,482  4676ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-04 08:57:50,562  5756ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-04 08:57:50,607  5801ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-04 08:57:50,610  5804ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-04 08:57:52,781  7975ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-04 08:57:52,816  8010ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-04 08:57:52,821  8015ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-04 08:57:55,910 11104ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=SSR/MRTtp=
+INFO  2017-08-04 08:57:55,966 11160ms SummaryController      GetFlight          - Flight count=126
+INFO  2017-08-04 08:57:55,970 11164ms SummaryController      GetFlight          - MappedFlight count=107
+INFO  2017-08-04 08:57:57,828 13023ms SummaryController      GetFlight          - dt=1/24/2017 12:00:00 AMtyp=ADS-Btp=
+INFO  2017-08-04 08:57:57,867 13061ms SummaryController      GetFlight          - Flight count=107
+INFO  2017-08-04 08:57:57,869 13064ms SummaryController      GetFlight          - MappedFlight count=107

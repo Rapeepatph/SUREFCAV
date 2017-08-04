@@ -237,6 +237,7 @@
     $scope.avgNucp = 0;
     $scope.ssrGroundSpeedData=[];
     $scope.adsbGroundSpeedChart = [];
+    $scope.ssrGroundSpeedChartVy = [];
     $scope.latLngTime = [];
     $scope.dataCapTime = [];
     $scope.flightLevelTime=[];
@@ -830,18 +831,18 @@ $scope.groundSpeedChartConfig = {
         },
         tooltip: {
             formatter: function () {
-                return "Time = " + moment(this.x).utc().format('HH:mm:ss.SSS') + ", Altitude = " + this.y;
+                return "Time = " + moment(this.x).utc().format('HH:mm:ss.SSS') + ", Velocity = " + this.y;
             }
         }
 
     },
     title: {
-        text: 'Track Velocity Versus Time of Flight ID ' + AircraftID
+        text: 'Track Velocity Versus Time of Flight ID (CAT62)' + AircraftID
     },
     series: [
         {
-            data: $scope.adsbGroundSpeedChart,
-            name: 'CAT21',
+            data: $scope.ssrGroundSpeedData,
+            name: 'Vx',
             color: 'blue',
             marker: {
                 enabled: true,
@@ -849,8 +850,8 @@ $scope.groundSpeedChartConfig = {
             }
         },
         {
-            data: $scope.ssrGroundSpeedData,
-            name: 'CAT62',
+            data: $scope.ssrGroundSpeedChartVy,
+            name: 'Vy',
             color: 'red',
             marker: {
                 enabled: true,
@@ -1061,8 +1062,9 @@ $scope.diffLatLngChartConfig = {
     var getLine = function (list, lat, lng, sic, color, text,width,dash)
     {
         var target = list.filter(x => x.SIC == sic);
-        var distance = getDistance(target[0].Lat, target[0].Lng, lat, lng);
-        if (target.length != 0) {
+        
+        if (target.length > 0) {
+            var distance = getDistance(target[0].Lat, target[0].Lng, lat, lng);
              var p = {
                 layer: 'path',
                 color: color,
@@ -1076,6 +1078,9 @@ $scope.diffLatLngChartConfig = {
                 
             };
             return p;
+        }
+        else {
+            return null;
         }
     }
     var getColor = function (ssrList, adsbList,sic) {
@@ -1218,6 +1223,7 @@ $scope.diffLatLngChartConfig = {
                 $scope.nucpChart.push(nucpPlot);
                 var speedPlot = [getTimeForChart(ap[0]), ap[11]];
                 $scope.adsbGroundSpeedChart.push(speedPlot);
+                
 
                 insertDataDistibution(ap[9]);
                 addDataToChart9(ap[0], ap[14], ap[15], ap[17]);
@@ -1307,6 +1313,8 @@ $scope.diffLatLngChartConfig = {
                 $scope.ssrAngleChart.push(anglePlot);
                 var speedPlot = [getTimeForChart(ap[0]), ap[11]];
                 $scope.ssrGroundSpeedData.push(speedPlot);
+                var speedPlotVy = [getTimeForChart(ap[0]), ap[12]];
+                $scope.ssrGroundSpeedChartVy.push(speedPlotVy);
 
                 addDataToChart8(ap[0], ap[14], ap[15],ap[17]);
                 addDataToChart10(ap[0], ap[13]);
@@ -1500,6 +1508,8 @@ $scope.diffLatLngChartConfig = {
             dynamicitems = [];
             adsbTrack(res[0].data);
             ssrTrack(res[1].data);
+            console.log(res[0]);
+            console.log(res[1]);
             addDataToChart6();
             $scope.avgNucp = findMean($scope.nucpChart);
             $scope.avgFLAge = findMean($scope.FLAge);
@@ -1623,23 +1633,25 @@ $scope.diffLatLngChartConfig = {
             for (var i = 0; i < args.model.siclist.length; i++) {
                 var obj = getNameBySIC(args.model.siclist[i]);
                 var typname = '';
-                if (obj[0].Type.substring(0, 4) == 'MSSR') {
-                    typname = 'SSR';
+                if (obj.length>0) {
+                    if (obj[0].Type.substring(0, 4) == 'MSSR') {
+                        typname = 'SSR';
+                    }
+                    else {
+                        typname = 'ADS-B';
+                    }
+                    var status = 'A';
+                    var distance = getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
+                    if (args.model.sic == obj[0].SIC) {
+                        status = 'S';
+                    }
+                    $scope.detailAllDistance.push({
+                        name: obj[0].Name,
+                        selected: status,
+                        dist: distance,
+                        typ: typname
+                    });
                 }
-                else {
-                    typname = 'ADS-B';
-                }
-                var status = 'A';
-                var distance = getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
-                if (args.model.sic == obj[0].SIC) {
-                    status = 'S';
-                }
-                $scope.detailAllDistance.push({
-                    name: obj[0].Name,
-                    selected: status,
-                    dist: distance,
-                    typ: typname
-                });
             }
             if (!inArray(args.model.sic, args.model.siclist)) {
                 var obj = getNameBySIC(args.model.sic);

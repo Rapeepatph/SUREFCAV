@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DMappedFlightView.cs">
+      <DependentUpon>SUREFDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Flight.cs">
       <DependentUpon>SUREFDb.tt</DependentUpon>
     </Compile>

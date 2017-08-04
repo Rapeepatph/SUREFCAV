@@ -22,44 +22,44 @@
           <Property Name="R2_5M_NT" Type="int" Nullable="false" />
           <Property Name="R7_5M_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_5M_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_5M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_5M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_5M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_5M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_5R_NR" Type="int" Nullable="false" />
           <Property Name="R2_5R_NT" Type="int" Nullable="false" />
           <Property Name="R7_5R_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_5R_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_5R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_5R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_5R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_5R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_3M_NR" Type="int" Nullable="false" />
           <Property Name="R2_3M_NT" Type="int" Nullable="false" />
           <Property Name="R7_3M_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_3M_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_3M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_3M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_3M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_3M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_3R_NR" Type="int" Nullable="false" />
           <Property Name="R2_3R_NT" Type="int" Nullable="false" />
           <Property Name="R7_3R_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_3R_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_3R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_3R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_3R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="NUCP" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_3R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="NUCP" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R3_5M_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
           <Property Name="R3_5R_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
           <Property Name="R3_3M_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
           <Property Name="R3_3R_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
-          <Property Name="R8_MFL_AGE_AVG" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R9_MFL_AGE_MAX" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R8_MFL_AGE_AVG" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R9_MFL_AGE_MAX" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R11_STABLE_FLIGHT" Type="int" Nullable="false" />
           <Property Name="R11_CLIMB_DESCEND_FLIGHT" Type="int" Nullable="false" />
           <Property Name="R11_IDENTIFY_FLIGHT_COUNT" Type="int" Nullable="false" />
           <Property Name="R6_3R_CLOSE_N" Type="int" Nullable="false" />
           <Property Name="R6_5R_CLOSE_N" Type="int" Nullable="false" />
-          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="FilePath" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="CreateTime" Type="datetime" Nullable="false" />
           <Property Name="ProcessRound" Type="datetime" Nullable="false" />
@@ -68,7 +68,56 @@
           <Property Name="Diagnose" Type="text" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SUREFCAV.dbo.FlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SUREFCAV_P18.dbo.DMappedFlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DMappedFlightView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FlightID" />
+            <PropertyRef Name="AnotherFlightID" />
+            <PropertyRef Name="TimeFrom" />
+            <PropertyRef Name="TimeTo" />
+            <PropertyRef Name="R4_H_ZIGMA_E_SQ" />
+            <PropertyRef Name="R4_H_N" />
+            <PropertyRef Name="R4_H_RMS" />
+            <PropertyRef Name="R11_V_ZIGMA_E_SQ" />
+            <PropertyRef Name="R11_V_N" />
+            <PropertyRef Name="R11_V_RMS" />
+            <PropertyRef Name="R10_VI_NI200" />
+            <PropertyRef Name="R10_VI_NI300" />
+            <PropertyRef Name="R10_VI_NV" />
+            <PropertyRef Name="R10_VI_R200" />
+            <PropertyRef Name="R10_VI_R300" />
+            <PropertyRef Name="R5_H_CE_R_5N" />
+            <PropertyRef Name="R5_H_CE_R_3N" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="ProcessRound" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FlightID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="AnotherFlightID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TimeFrom" Type="datetime" Nullable="false" />
+          <Property Name="TimeTo" Type="datetime" Nullable="false" />
+          <Property Name="R4_H_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R4_H_N" Type="int" Nullable="false" />
+          <Property Name="R4_H_RMS" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R4_H_Diagnose" Type="text" />
+          <Property Name="R11_V_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R11_V_N" Type="int" Nullable="false" />
+          <Property Name="R11_V_RMS" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R11_V_Diagnose" Type="text" />
+          <Property Name="R10_VI_NI200" Type="int" Nullable="false" />
+          <Property Name="R10_VI_NI300" Type="int" Nullable="false" />
+          <Property Name="R10_VI_NV" Type="int" Nullable="false" />
+          <Property Name="R10_VI_R200" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R10_VI_R300" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R10_VI_Diagnose" Type="text" />
+          <Property Name="R5_H_CE_R_5N" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R5_H_CE_R_3N" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="ProcessRound" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SUREFCAV_P18.dbo.FlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="FlightView">
           <Key>
             <PropertyRef Name="ID" />
@@ -140,53 +189,52 @@ warning 6002: The table/view 'SUREFCAV.dbo.FlightView' does not have a primary k
           <Property Name="R2_5M_NT" Type="int" Nullable="false" />
           <Property Name="R7_5M_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_5M_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_5M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_5M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_5M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_5M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_5R_NR" Type="int" Nullable="false" />
           <Property Name="R2_5R_NT" Type="int" Nullable="false" />
           <Property Name="R7_5R_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_5R_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_5R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_5R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_5R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_5R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_3M_NR" Type="int" Nullable="false" />
           <Property Name="R2_3M_NT" Type="int" Nullable="false" />
           <Property Name="R7_3M_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_3M_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_3M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_3M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_3M" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_3M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3M" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_3R_NR" Type="int" Nullable="false" />
           <Property Name="R2_3R_NT" Type="int" Nullable="false" />
           <Property Name="R7_3R_NC_V" Type="int" Nullable="false" />
           <Property Name="R14_3R_NC_I" Type="int" Nullable="false" />
-          <Property Name="R2_3R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_3R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_3R" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="NUCP" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_3R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3R" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="NUCP" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R3_5M_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
           <Property Name="R3_5R_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
           <Property Name="R3_3M_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
           <Property Name="R3_3R_NG_LONGGAP_COUNT" Type="int" Nullable="false" />
-          <Property Name="R8_MFL_AGE_AVG" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R9_MFL_AGE_MAX" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R8_MFL_AGE_AVG" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R9_MFL_AGE_MAX" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R11_STABLE_FLIGHT" Type="int" Nullable="false" />
           <Property Name="R11_CLIMB_DESCEND_FLIGHT" Type="int" Nullable="false" />
           <Property Name="R11_IDENTIFY_FLIGHT_COUNT" Type="int" Nullable="false" />
           <Property Name="R6_3R_CLOSE_N" Type="int" Nullable="false" />
           <Property Name="R6_5R_CLOSE_N" Type="int" Nullable="false" />
-          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="FilePath" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="CreateTime" Type="datetime" Nullable="false" />
           <Property Name="ProcessRound" Type="datetime" Nullable="false" />
           <Property Name="HasPlotInCAV" Type="int" Nullable="false" />
           <Property Name="Indicator" Type="int" />
-          <Property Name="Diagnose" Type="text" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SUREFCAV.dbo.MappedFlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SUREFCAV_P18.dbo.MappedFlightView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="MappedFlightView">
           <Key>
             <PropertyRef Name="Id" />
@@ -218,24 +266,21 @@ warning 6002: The table/view 'SUREFCAV.dbo.MappedFlightView' does not have a pri
           <Property Name="R4_H_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R4_H_N" Type="int" Nullable="false" />
           <Property Name="R4_H_RMS" Type="decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R4_H_Diagnose" Type="text" />
           <Property Name="R11_V_ZIGMA_E_SQ" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R11_V_N" Type="int" Nullable="false" />
           <Property Name="R11_V_RMS" Type="decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R11_V_Diagnose" Type="text" />
           <Property Name="R10_VI_NI200" Type="int" Nullable="false" />
           <Property Name="R10_VI_NI300" Type="int" Nullable="false" />
           <Property Name="R10_VI_NV" Type="int" Nullable="false" />
           <Property Name="R10_VI_R200" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R10_VI_R300" Type="decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R10_VI_Diagnose" Type="text" />
           <Property Name="R5_H_CE_R_5N" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R5_H_CE_R_3N" Type="decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="CreateTime" Type="datetime" Nullable="false" />
           <Property Name="ProcessRound" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SUREFCAV_P18.dbo.SensorView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SensorView">
           <Key>
             <PropertyRef Name="ID" />
@@ -249,6 +294,33 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
         </EntityType>
         <EntityContainer Name="SUREFDbStoreContainer">
           <EntitySet Name="Flight" EntityType="Self.Flight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DMappedFlightView" EntityType="Self.DMappedFlightView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DMappedFlightView].[Id] AS [Id], 
+    [DMappedFlightView].[FlightID] AS [FlightID], 
+    [DMappedFlightView].[AnotherFlightID] AS [AnotherFlightID], 
+    [DMappedFlightView].[TimeFrom] AS [TimeFrom], 
+    [DMappedFlightView].[TimeTo] AS [TimeTo], 
+    [DMappedFlightView].[R4_H_ZIGMA_E_SQ] AS [R4_H_ZIGMA_E_SQ], 
+    [DMappedFlightView].[R4_H_N] AS [R4_H_N], 
+    [DMappedFlightView].[R4_H_RMS] AS [R4_H_RMS], 
+    [DMappedFlightView].[R4_H_Diagnose] AS [R4_H_Diagnose], 
+    [DMappedFlightView].[R11_V_ZIGMA_E_SQ] AS [R11_V_ZIGMA_E_SQ], 
+    [DMappedFlightView].[R11_V_N] AS [R11_V_N], 
+    [DMappedFlightView].[R11_V_RMS] AS [R11_V_RMS], 
+    [DMappedFlightView].[R11_V_Diagnose] AS [R11_V_Diagnose], 
+    [DMappedFlightView].[R10_VI_NI200] AS [R10_VI_NI200], 
+    [DMappedFlightView].[R10_VI_NI300] AS [R10_VI_NI300], 
+    [DMappedFlightView].[R10_VI_NV] AS [R10_VI_NV], 
+    [DMappedFlightView].[R10_VI_R200] AS [R10_VI_R200], 
+    [DMappedFlightView].[R10_VI_R300] AS [R10_VI_R300], 
+    [DMappedFlightView].[R10_VI_Diagnose] AS [R10_VI_Diagnose], 
+    [DMappedFlightView].[R5_H_CE_R_5N] AS [R5_H_CE_R_5N], 
+    [DMappedFlightView].[R5_H_CE_R_3N] AS [R5_H_CE_R_3N], 
+    [DMappedFlightView].[CreateTime] AS [CreateTime], 
+    [DMappedFlightView].[ProcessRound] AS [ProcessRound]
+    FROM [dbo].[DMappedFlightView] AS [DMappedFlightView]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="FlightView" EntityType="Self.FlightView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [FlightView].[ID] AS [ID], 
@@ -306,8 +378,7 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
     [FlightView].[CreateTime] AS [CreateTime], 
     [FlightView].[ProcessRound] AS [ProcessRound], 
     [FlightView].[HasPlotInCAV] AS [HasPlotInCAV], 
-    [FlightView].[Indicator] AS [Indicator], 
-    [FlightView].[Diagnose] AS [Diagnose]
+    [FlightView].[Indicator] AS [Indicator]
     FROM [dbo].[FlightView] AS [FlightView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="MappedFlightView" EntityType="Self.MappedFlightView" store:Type="Views" store:Schema="dbo">
@@ -320,17 +391,14 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
     [MappedFlightView].[R4_H_ZIGMA_E_SQ] AS [R4_H_ZIGMA_E_SQ], 
     [MappedFlightView].[R4_H_N] AS [R4_H_N], 
     [MappedFlightView].[R4_H_RMS] AS [R4_H_RMS], 
-    [MappedFlightView].[R4_H_Diagnose] AS [R4_H_Diagnose], 
     [MappedFlightView].[R11_V_ZIGMA_E_SQ] AS [R11_V_ZIGMA_E_SQ], 
     [MappedFlightView].[R11_V_N] AS [R11_V_N], 
     [MappedFlightView].[R11_V_RMS] AS [R11_V_RMS], 
-    [MappedFlightView].[R11_V_Diagnose] AS [R11_V_Diagnose], 
     [MappedFlightView].[R10_VI_NI200] AS [R10_VI_NI200], 
     [MappedFlightView].[R10_VI_NI300] AS [R10_VI_NI300], 
     [MappedFlightView].[R10_VI_NV] AS [R10_VI_NV], 
     [MappedFlightView].[R10_VI_R200] AS [R10_VI_R200], 
     [MappedFlightView].[R10_VI_R300] AS [R10_VI_R300], 
-    [MappedFlightView].[R10_VI_Diagnose] AS [R10_VI_Diagnose], 
     [MappedFlightView].[R5_H_CE_R_5N] AS [R5_H_CE_R_5N], 
     [MappedFlightView].[R5_H_CE_R_3N] AS [R5_H_CE_R_3N], 
     [MappedFlightView].[CreateTime] AS [CreateTime], 
@@ -351,6 +419,68 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SUREFDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Flight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SensorID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DateofFlight" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AircraftID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CallSign" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mode3ACode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrackID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeTo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="R2_5M_NR" Type="Int32" Nullable="false" />
+          <Property Name="R2_5M_NT" Type="Int32" Nullable="false" />
+          <Property Name="R7_5M_NC_V" Type="Int32" Nullable="false" />
+          <Property Name="R14_5M_NC_I" Type="Int32" Nullable="false" />
+          <Property Name="R2_5M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R2_5R_NR" Type="Int32" Nullable="false" />
+          <Property Name="R2_5R_NT" Type="Int32" Nullable="false" />
+          <Property Name="R7_5R_NC_V" Type="Int32" Nullable="false" />
+          <Property Name="R14_5R_NC_I" Type="Int32" Nullable="false" />
+          <Property Name="R2_5R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R2_3M_NR" Type="Int32" Nullable="false" />
+          <Property Name="R2_3M_NT" Type="Int32" Nullable="false" />
+          <Property Name="R7_3M_NC_V" Type="Int32" Nullable="false" />
+          <Property Name="R14_3M_NC_I" Type="Int32" Nullable="false" />
+          <Property Name="R2_3M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R2_3R_NR" Type="Int32" Nullable="false" />
+          <Property Name="R2_3R_NT" Type="Int32" Nullable="false" />
+          <Property Name="R7_3R_NC_V" Type="Int32" Nullable="false" />
+          <Property Name="R14_3R_NC_I" Type="Int32" Nullable="false" />
+          <Property Name="R2_3R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="NUCP" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R3_5M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="R3_5R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="R3_3M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="R3_3R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="R8_MFL_AGE_AVG" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R9_MFL_AGE_MAX" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R11_STABLE_FLIGHT" Type="Int32" Nullable="false" />
+          <Property Name="R11_CLIMB_DESCEND_FLIGHT" Type="Int32" Nullable="false" />
+          <Property Name="R11_IDENTIFY_FLIGHT_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="R6_3R_CLOSE_N" Type="Int32" Nullable="false" />
+          <Property Name="R6_5R_CLOSE_N" Type="Int32" Nullable="false" />
+          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HasPlotInCAV" Type="Int32" Nullable="false" />
+          <Property Name="Indicator" Type="Int32" />
+          <Property Name="Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="FlightView">
           <Key>
             <PropertyRef Name="ID" />
@@ -422,50 +552,114 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
           <Property Name="R2_5M_NT" Type="Int32" Nullable="false" />
           <Property Name="R7_5M_NC_V" Type="Int32" Nullable="false" />
           <Property Name="R14_5M_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_5M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_5M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_5M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_5M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_5R_NR" Type="Int32" Nullable="false" />
           <Property Name="R2_5R_NT" Type="Int32" Nullable="false" />
           <Property Name="R7_5R_NC_V" Type="Int32" Nullable="false" />
           <Property Name="R14_5R_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_5R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_5R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_5R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_5R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_5R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_5R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_3M_NR" Type="Int32" Nullable="false" />
           <Property Name="R2_3M_NT" Type="Int32" Nullable="false" />
           <Property Name="R7_3M_NC_V" Type="Int32" Nullable="false" />
           <Property Name="R14_3M_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_3M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_3M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_3M" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_3M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3M" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R2_3R_NR" Type="Int32" Nullable="false" />
           <Property Name="R2_3R_NT" Type="Int32" Nullable="false" />
           <Property Name="R7_3R_NC_V" Type="Int32" Nullable="false" />
           <Property Name="R14_3R_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_3R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R7_3R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R14_3R" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="NUCP" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R2_3R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R7_3R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R14_3R" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="NUCP" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R3_5M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
           <Property Name="R3_5R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
           <Property Name="R3_3M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
           <Property Name="R3_3R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
-          <Property Name="R8_MFL_AGE_AVG" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R9_MFL_AGE_MAX" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R8_MFL_AGE_AVG" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R9_MFL_AGE_MAX" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="R11_STABLE_FLIGHT" Type="Int32" Nullable="false" />
           <Property Name="R11_CLIMB_DESCEND_FLIGHT" Type="Int32" Nullable="false" />
           <Property Name="R11_IDENTIFY_FLIGHT_COUNT" Type="Int32" Nullable="false" />
           <Property Name="R6_3R_CLOSE_N" Type="Int32" Nullable="false" />
           <Property Name="R6_5R_CLOSE_N" Type="Int32" Nullable="false" />
-          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
           <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="HasPlotInCAV" Type="Int32" Nullable="false" />
           <Property Name="Indicator" Type="Int32" />
-          <Property Name="Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SensorView">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Port" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="SUREFEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Flights" EntityType="Self.Flight" />
+          <EntitySet Name="FlightViews" EntityType="Self.FlightView" />
+          <EntitySet Name="SensorViews" EntityType="Self.SensorView" />
+          <EntitySet Name="DMappedFlightViews" EntityType="SUREFDb.DMappedFlightView" />
+          <EntitySet Name="MappedFlightViews" EntityType="SUREFDb.MappedFlightView" />
+        </EntityContainer>
+        <EntityType Name="DMappedFlightView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FlightID" />
+            <PropertyRef Name="AnotherFlightID" />
+            <PropertyRef Name="TimeFrom" />
+            <PropertyRef Name="TimeTo" />
+            <PropertyRef Name="R4_H_ZIGMA_E_SQ" />
+            <PropertyRef Name="R4_H_N" />
+            <PropertyRef Name="R4_H_RMS" />
+            <PropertyRef Name="R11_V_ZIGMA_E_SQ" />
+            <PropertyRef Name="R11_V_N" />
+            <PropertyRef Name="R11_V_RMS" />
+            <PropertyRef Name="R10_VI_NI200" />
+            <PropertyRef Name="R10_VI_NI300" />
+            <PropertyRef Name="R10_VI_NV" />
+            <PropertyRef Name="R10_VI_R200" />
+            <PropertyRef Name="R10_VI_R300" />
+            <PropertyRef Name="R5_H_CE_R_5N" />
+            <PropertyRef Name="R5_H_CE_R_3N" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="ProcessRound" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FlightID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="AnotherFlightID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeTo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="R4_H_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R4_H_N" Type="Int32" Nullable="false" />
+          <Property Name="R4_H_RMS" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R4_H_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="R11_V_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R11_V_N" Type="Int32" Nullable="false" />
+          <Property Name="R11_V_RMS" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R11_V_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="R10_VI_NI200" Type="Int32" Nullable="false" />
+          <Property Name="R10_VI_NI300" Type="Int32" Nullable="false" />
+          <Property Name="R10_VI_NV" Type="Int32" Nullable="false" />
+          <Property Name="R10_VI_R200" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R10_VI_R300" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R10_VI_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="R5_H_CE_R_5N" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R5_H_CE_R_3N" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="MappedFlightView">
           <Key>
@@ -490,108 +684,26 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
             <PropertyRef Name="CreateTime" />
             <PropertyRef Name="ProcessRound" />
           </Key>
-          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FlightID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="AnotherFlightID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FlightID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="AnotherFlightID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TimeTo" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="R4_H_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R4_H_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
           <Property Name="R4_H_N" Type="Int32" Nullable="false" />
-          <Property Name="R4_H_RMS" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R4_H_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="R11_V_ZIGMA_E_SQ" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R4_H_RMS" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R11_V_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
           <Property Name="R11_V_N" Type="Int32" Nullable="false" />
-          <Property Name="R11_V_RMS" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R11_V_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="R11_V_RMS" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
           <Property Name="R10_VI_NI200" Type="Int32" Nullable="false" />
           <Property Name="R10_VI_NI300" Type="Int32" Nullable="false" />
           <Property Name="R10_VI_NV" Type="Int32" Nullable="false" />
-          <Property Name="R10_VI_R200" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R10_VI_R300" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R10_VI_Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="R5_H_CE_R_5N" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="R5_H_CE_R_3N" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="R10_VI_R200" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R10_VI_R300" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R5_H_CE_R_5N" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="R5_H_CE_R_3N" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
           <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="SensorView">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Port" Type="Int32" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="SUREFEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="FlightViews" EntityType="Self.FlightView" />
-          <EntitySet Name="MappedFlightViews" EntityType="Self.MappedFlightView" />
-          <EntitySet Name="SensorViews" EntityType="Self.SensorView" />
-          <EntitySet Name="Flights" EntityType="SUREFDb.Flight" />
-        </EntityContainer>
-        <EntityType Name="Flight">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SensorID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="DateofFlight" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="AircraftID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CallSign" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mode3ACode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TrackID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="TimeTo" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="R2_5M_NR" Type="Int32" Nullable="false" />
-          <Property Name="R2_5M_NT" Type="Int32" Nullable="false" />
-          <Property Name="R7_5M_NC_V" Type="Int32" Nullable="false" />
-          <Property Name="R14_5M_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_5M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R7_5M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R14_5M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R2_5R_NR" Type="Int32" Nullable="false" />
-          <Property Name="R2_5R_NT" Type="Int32" Nullable="false" />
-          <Property Name="R7_5R_NC_V" Type="Int32" Nullable="false" />
-          <Property Name="R14_5R_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_5R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R7_5R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R14_5R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R2_3M_NR" Type="Int32" Nullable="false" />
-          <Property Name="R2_3M_NT" Type="Int32" Nullable="false" />
-          <Property Name="R7_3M_NC_V" Type="Int32" Nullable="false" />
-          <Property Name="R14_3M_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_3M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R7_3M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R14_3M" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R2_3R_NR" Type="Int32" Nullable="false" />
-          <Property Name="R2_3R_NT" Type="Int32" Nullable="false" />
-          <Property Name="R7_3R_NC_V" Type="Int32" Nullable="false" />
-          <Property Name="R14_3R_NC_I" Type="Int32" Nullable="false" />
-          <Property Name="R2_3R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R7_3R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R14_3R" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="NUCP" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R3_5M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
-          <Property Name="R3_5R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
-          <Property Name="R3_3M_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
-          <Property Name="R3_3R_NG_LONGGAP_COUNT" Type="Int32" Nullable="false" />
-          <Property Name="R8_MFL_AGE_AVG" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R9_MFL_AGE_MAX" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R11_STABLE_FLIGHT" Type="Int32" Nullable="false" />
-          <Property Name="R11_CLIMB_DESCEND_FLIGHT" Type="Int32" Nullable="false" />
-          <Property Name="R11_IDENTIFY_FLIGHT_COUNT" Type="Int32" Nullable="false" />
-          <Property Name="R6_3R_CLOSE_N" Type="Int32" Nullable="false" />
-          <Property Name="R6_5R_CLOSE_N" Type="Int32" Nullable="false" />
-          <Property Name="R6_3R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="R6_5R_CLOSE_ZIGMA_E_SQ" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="FilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ProcessRound" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="HasPlotInCAV" Type="Int32" Nullable="false" />
-          <Property Name="Indicator" Type="Int32" />
-          <Property Name="Diagnose" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -599,11 +711,9 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SUREFDbStoreContainer" CdmEntityContainer="SUREFEntities">
-          <EntitySetMapping Name="FlightViews">
-            <EntityTypeMapping TypeName="SUREFDb.FlightView">
-              <MappingFragment StoreEntitySet="FlightView">
-                <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
-                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+          <EntitySetMapping Name="Flights">
+            <EntityTypeMapping TypeName="SUREFDb.Flight">
+              <MappingFragment StoreEntitySet="Flight">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SensorID" ColumnName="SensorID" />
                 <ScalarProperty Name="DateofFlight" ColumnName="DateofFlight" />
@@ -659,35 +769,70 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />
                 <ScalarProperty Name="HasPlotInCAV" ColumnName="HasPlotInCAV" />
+                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+                <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MappedFlightViews">
-            <EntityTypeMapping TypeName="SUREFDb.MappedFlightView">
-              <MappingFragment StoreEntitySet="MappedFlightView">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="FlightID" ColumnName="FlightID" />
-                <ScalarProperty Name="AnotherFlightID" ColumnName="AnotherFlightID" />
+          <EntitySetMapping Name="FlightViews">
+            <EntityTypeMapping TypeName="SUREFDb.FlightView">
+              <MappingFragment StoreEntitySet="FlightView">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+                <ScalarProperty Name="DateofFlight" ColumnName="DateofFlight" />
+                <ScalarProperty Name="AircraftID" ColumnName="AircraftID" />
+                <ScalarProperty Name="CallSign" ColumnName="CallSign" />
+                <ScalarProperty Name="Mode3ACode" ColumnName="Mode3ACode" />
+                <ScalarProperty Name="TrackID" ColumnName="TrackID" />
                 <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
                 <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
-                <ScalarProperty Name="R4_H_ZIGMA_E_SQ" ColumnName="R4_H_ZIGMA_E_SQ" />
-                <ScalarProperty Name="R4_H_N" ColumnName="R4_H_N" />
-                <ScalarProperty Name="R4_H_RMS" ColumnName="R4_H_RMS" />
-                <ScalarProperty Name="R4_H_Diagnose" ColumnName="R4_H_Diagnose" />
-                <ScalarProperty Name="R11_V_ZIGMA_E_SQ" ColumnName="R11_V_ZIGMA_E_SQ" />
-                <ScalarProperty Name="R11_V_N" ColumnName="R11_V_N" />
-                <ScalarProperty Name="R11_V_RMS" ColumnName="R11_V_RMS" />
-                <ScalarProperty Name="R11_V_Diagnose" ColumnName="R11_V_Diagnose" />
-                <ScalarProperty Name="R10_VI_NI200" ColumnName="R10_VI_NI200" />
-                <ScalarProperty Name="R10_VI_NI300" ColumnName="R10_VI_NI300" />
-                <ScalarProperty Name="R10_VI_NV" ColumnName="R10_VI_NV" />
-                <ScalarProperty Name="R10_VI_R200" ColumnName="R10_VI_R200" />
-                <ScalarProperty Name="R10_VI_R300" ColumnName="R10_VI_R300" />
-                <ScalarProperty Name="R10_VI_Diagnose" ColumnName="R10_VI_Diagnose" />
-                <ScalarProperty Name="R5_H_CE_R_5N" ColumnName="R5_H_CE_R_5N" />
-                <ScalarProperty Name="R5_H_CE_R_3N" ColumnName="R5_H_CE_R_3N" />
+                <ScalarProperty Name="R2_5M_NR" ColumnName="R2_5M_NR" />
+                <ScalarProperty Name="R2_5M_NT" ColumnName="R2_5M_NT" />
+                <ScalarProperty Name="R7_5M_NC_V" ColumnName="R7_5M_NC_V" />
+                <ScalarProperty Name="R14_5M_NC_I" ColumnName="R14_5M_NC_I" />
+                <ScalarProperty Name="R2_5M" ColumnName="R2_5M" />
+                <ScalarProperty Name="R7_5M" ColumnName="R7_5M" />
+                <ScalarProperty Name="R14_5M" ColumnName="R14_5M" />
+                <ScalarProperty Name="R2_5R_NR" ColumnName="R2_5R_NR" />
+                <ScalarProperty Name="R2_5R_NT" ColumnName="R2_5R_NT" />
+                <ScalarProperty Name="R7_5R_NC_V" ColumnName="R7_5R_NC_V" />
+                <ScalarProperty Name="R14_5R_NC_I" ColumnName="R14_5R_NC_I" />
+                <ScalarProperty Name="R2_5R" ColumnName="R2_5R" />
+                <ScalarProperty Name="R7_5R" ColumnName="R7_5R" />
+                <ScalarProperty Name="R14_5R" ColumnName="R14_5R" />
+                <ScalarProperty Name="R2_3M_NR" ColumnName="R2_3M_NR" />
+                <ScalarProperty Name="R2_3M_NT" ColumnName="R2_3M_NT" />
+                <ScalarProperty Name="R7_3M_NC_V" ColumnName="R7_3M_NC_V" />
+                <ScalarProperty Name="R14_3M_NC_I" ColumnName="R14_3M_NC_I" />
+                <ScalarProperty Name="R2_3M" ColumnName="R2_3M" />
+                <ScalarProperty Name="R7_3M" ColumnName="R7_3M" />
+                <ScalarProperty Name="R14_3M" ColumnName="R14_3M" />
+                <ScalarProperty Name="R2_3R_NR" ColumnName="R2_3R_NR" />
+                <ScalarProperty Name="R2_3R_NT" ColumnName="R2_3R_NT" />
+                <ScalarProperty Name="R7_3R_NC_V" ColumnName="R7_3R_NC_V" />
+                <ScalarProperty Name="R14_3R_NC_I" ColumnName="R14_3R_NC_I" />
+                <ScalarProperty Name="R2_3R" ColumnName="R2_3R" />
+                <ScalarProperty Name="R7_3R" ColumnName="R7_3R" />
+                <ScalarProperty Name="R14_3R" ColumnName="R14_3R" />
+                <ScalarProperty Name="NUCP" ColumnName="NUCP" />
+                <ScalarProperty Name="R3_5M_NG_LONGGAP_COUNT" ColumnName="R3_5M_NG_LONGGAP_COUNT" />
+                <ScalarProperty Name="R3_5R_NG_LONGGAP_COUNT" ColumnName="R3_5R_NG_LONGGAP_COUNT" />
+                <ScalarProperty Name="R3_3M_NG_LONGGAP_COUNT" ColumnName="R3_3M_NG_LONGGAP_COUNT" />
+                <ScalarProperty Name="R3_3R_NG_LONGGAP_COUNT" ColumnName="R3_3R_NG_LONGGAP_COUNT" />
+                <ScalarProperty Name="R8_MFL_AGE_AVG" ColumnName="R8_MFL_AGE_AVG" />
+                <ScalarProperty Name="R9_MFL_AGE_MAX" ColumnName="R9_MFL_AGE_MAX" />
+                <ScalarProperty Name="R11_STABLE_FLIGHT" ColumnName="R11_STABLE_FLIGHT" />
+                <ScalarProperty Name="R11_CLIMB_DESCEND_FLIGHT" ColumnName="R11_CLIMB_DESCEND_FLIGHT" />
+                <ScalarProperty Name="R11_IDENTIFY_FLIGHT_COUNT" ColumnName="R11_IDENTIFY_FLIGHT_COUNT" />
+                <ScalarProperty Name="R6_3R_CLOSE_N" ColumnName="R6_3R_CLOSE_N" />
+                <ScalarProperty Name="R6_5R_CLOSE_N" ColumnName="R6_5R_CLOSE_N" />
+                <ScalarProperty Name="R6_3R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_3R_CLOSE_ZIGMA_E_SQ" />
+                <ScalarProperty Name="R6_5R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_5R_CLOSE_ZIGMA_E_SQ" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />
+                <ScalarProperty Name="HasPlotInCAV" ColumnName="HasPlotInCAV" />
+                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -702,66 +847,58 @@ warning 6002: The table/view 'SUREFCAV.dbo.SensorView' does not have a primary k
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Flights">
-            <EntityTypeMapping TypeName="SUREFDb.Flight">
-              <MappingFragment StoreEntitySet="Flight">
-                <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
-                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
-                <ScalarProperty Name="HasPlotInCAV" ColumnName="HasPlotInCAV" />
+          <EntitySetMapping Name="DMappedFlightViews">
+            <EntityTypeMapping TypeName="SUREFDb.DMappedFlightView">
+              <MappingFragment StoreEntitySet="DMappedFlightView">
                 <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-                <ScalarProperty Name="R6_5R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_5R_CLOSE_ZIGMA_E_SQ" />
-                <ScalarProperty Name="R6_3R_CLOSE_ZIGMA_E_SQ" ColumnName="R6_3R_CLOSE_ZIGMA_E_SQ" />
-                <ScalarProperty Name="R6_5R_CLOSE_N" ColumnName="R6_5R_CLOSE_N" />
-                <ScalarProperty Name="R6_3R_CLOSE_N" ColumnName="R6_3R_CLOSE_N" />
-                <ScalarProperty Name="R11_IDENTIFY_FLIGHT_COUNT" ColumnName="R11_IDENTIFY_FLIGHT_COUNT" />
-                <ScalarProperty Name="R11_CLIMB_DESCEND_FLIGHT" ColumnName="R11_CLIMB_DESCEND_FLIGHT" />
-                <ScalarProperty Name="R11_STABLE_FLIGHT" ColumnName="R11_STABLE_FLIGHT" />
-                <ScalarProperty Name="R9_MFL_AGE_MAX" ColumnName="R9_MFL_AGE_MAX" />
-                <ScalarProperty Name="R8_MFL_AGE_AVG" ColumnName="R8_MFL_AGE_AVG" />
-                <ScalarProperty Name="R3_3R_NG_LONGGAP_COUNT" ColumnName="R3_3R_NG_LONGGAP_COUNT" />
-                <ScalarProperty Name="R3_3M_NG_LONGGAP_COUNT" ColumnName="R3_3M_NG_LONGGAP_COUNT" />
-                <ScalarProperty Name="R3_5R_NG_LONGGAP_COUNT" ColumnName="R3_5R_NG_LONGGAP_COUNT" />
-                <ScalarProperty Name="R3_5M_NG_LONGGAP_COUNT" ColumnName="R3_5M_NG_LONGGAP_COUNT" />
-                <ScalarProperty Name="NUCP" ColumnName="NUCP" />
-                <ScalarProperty Name="R14_3R" ColumnName="R14_3R" />
-                <ScalarProperty Name="R7_3R" ColumnName="R7_3R" />
-                <ScalarProperty Name="R2_3R" ColumnName="R2_3R" />
-                <ScalarProperty Name="R14_3R_NC_I" ColumnName="R14_3R_NC_I" />
-                <ScalarProperty Name="R7_3R_NC_V" ColumnName="R7_3R_NC_V" />
-                <ScalarProperty Name="R2_3R_NT" ColumnName="R2_3R_NT" />
-                <ScalarProperty Name="R2_3R_NR" ColumnName="R2_3R_NR" />
-                <ScalarProperty Name="R14_3M" ColumnName="R14_3M" />
-                <ScalarProperty Name="R7_3M" ColumnName="R7_3M" />
-                <ScalarProperty Name="R2_3M" ColumnName="R2_3M" />
-                <ScalarProperty Name="R14_3M_NC_I" ColumnName="R14_3M_NC_I" />
-                <ScalarProperty Name="R7_3M_NC_V" ColumnName="R7_3M_NC_V" />
-                <ScalarProperty Name="R2_3M_NT" ColumnName="R2_3M_NT" />
-                <ScalarProperty Name="R2_3M_NR" ColumnName="R2_3M_NR" />
-                <ScalarProperty Name="R14_5R" ColumnName="R14_5R" />
-                <ScalarProperty Name="R7_5R" ColumnName="R7_5R" />
-                <ScalarProperty Name="R2_5R" ColumnName="R2_5R" />
-                <ScalarProperty Name="R14_5R_NC_I" ColumnName="R14_5R_NC_I" />
-                <ScalarProperty Name="R7_5R_NC_V" ColumnName="R7_5R_NC_V" />
-                <ScalarProperty Name="R2_5R_NT" ColumnName="R2_5R_NT" />
-                <ScalarProperty Name="R2_5R_NR" ColumnName="R2_5R_NR" />
-                <ScalarProperty Name="R14_5M" ColumnName="R14_5M" />
-                <ScalarProperty Name="R7_5M" ColumnName="R7_5M" />
-                <ScalarProperty Name="R2_5M" ColumnName="R2_5M" />
-                <ScalarProperty Name="R14_5M_NC_I" ColumnName="R14_5M_NC_I" />
-                <ScalarProperty Name="R7_5M_NC_V" ColumnName="R7_5M_NC_V" />
-                <ScalarProperty Name="R2_5M_NT" ColumnName="R2_5M_NT" />
-                <ScalarProperty Name="R2_5M_NR" ColumnName="R2_5M_NR" />
+                <ScalarProperty Name="R5_H_CE_R_3N" ColumnName="R5_H_CE_R_3N" />
+                <ScalarProperty Name="R5_H_CE_R_5N" ColumnName="R5_H_CE_R_5N" />
+                <ScalarProperty Name="R10_VI_Diagnose" ColumnName="R10_VI_Diagnose" />
+                <ScalarProperty Name="R10_VI_R300" ColumnName="R10_VI_R300" />
+                <ScalarProperty Name="R10_VI_R200" ColumnName="R10_VI_R200" />
+                <ScalarProperty Name="R10_VI_NV" ColumnName="R10_VI_NV" />
+                <ScalarProperty Name="R10_VI_NI300" ColumnName="R10_VI_NI300" />
+                <ScalarProperty Name="R10_VI_NI200" ColumnName="R10_VI_NI200" />
+                <ScalarProperty Name="R11_V_Diagnose" ColumnName="R11_V_Diagnose" />
+                <ScalarProperty Name="R11_V_RMS" ColumnName="R11_V_RMS" />
+                <ScalarProperty Name="R11_V_N" ColumnName="R11_V_N" />
+                <ScalarProperty Name="R11_V_ZIGMA_E_SQ" ColumnName="R11_V_ZIGMA_E_SQ" />
+                <ScalarProperty Name="R4_H_Diagnose" ColumnName="R4_H_Diagnose" />
+                <ScalarProperty Name="R4_H_RMS" ColumnName="R4_H_RMS" />
+                <ScalarProperty Name="R4_H_N" ColumnName="R4_H_N" />
+                <ScalarProperty Name="R4_H_ZIGMA_E_SQ" ColumnName="R4_H_ZIGMA_E_SQ" />
                 <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
                 <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
-                <ScalarProperty Name="TrackID" ColumnName="TrackID" />
-                <ScalarProperty Name="Mode3ACode" ColumnName="Mode3ACode" />
-                <ScalarProperty Name="CallSign" ColumnName="CallSign" />
-                <ScalarProperty Name="AircraftID" ColumnName="AircraftID" />
-                <ScalarProperty Name="DateofFlight" ColumnName="DateofFlight" />
-                <ScalarProperty Name="SensorID" ColumnName="SensorID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AnotherFlightID" ColumnName="AnotherFlightID" />
+                <ScalarProperty Name="FlightID" ColumnName="FlightID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MappedFlightViews">
+            <EntityTypeMapping TypeName="SUREFDb.MappedFlightView">
+              <MappingFragment StoreEntitySet="MappedFlightView">
+                <ScalarProperty Name="ProcessRound" ColumnName="ProcessRound" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="R5_H_CE_R_3N" ColumnName="R5_H_CE_R_3N" />
+                <ScalarProperty Name="R5_H_CE_R_5N" ColumnName="R5_H_CE_R_5N" />
+                <ScalarProperty Name="R10_VI_R300" ColumnName="R10_VI_R300" />
+                <ScalarProperty Name="R10_VI_R200" ColumnName="R10_VI_R200" />
+                <ScalarProperty Name="R10_VI_NV" ColumnName="R10_VI_NV" />
+                <ScalarProperty Name="R10_VI_NI300" ColumnName="R10_VI_NI300" />
+                <ScalarProperty Name="R10_VI_NI200" ColumnName="R10_VI_NI200" />
+                <ScalarProperty Name="R11_V_RMS" ColumnName="R11_V_RMS" />
+                <ScalarProperty Name="R11_V_N" ColumnName="R11_V_N" />
+                <ScalarProperty Name="R11_V_ZIGMA_E_SQ" ColumnName="R11_V_ZIGMA_E_SQ" />
+                <ScalarProperty Name="R4_H_RMS" ColumnName="R4_H_RMS" />
+                <ScalarProperty Name="R4_H_N" ColumnName="R4_H_N" />
+                <ScalarProperty Name="R4_H_ZIGMA_E_SQ" ColumnName="R4_H_ZIGMA_E_SQ" />
+                <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+                <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+                <ScalarProperty Name="AnotherFlightID" ColumnName="AnotherFlightID" />
+                <ScalarProperty Name="FlightID" ColumnName="FlightID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
