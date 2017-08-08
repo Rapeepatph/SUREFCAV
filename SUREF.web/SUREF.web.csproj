@@ -1112,7 +1112,9 @@
     <Content Include="Scripts\star-rating.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1167,6 +1169,7 @@
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Map\Debug.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

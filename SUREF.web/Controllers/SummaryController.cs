@@ -67,118 +67,153 @@ namespace SUREF.Controllers
         [System.Web.Http.HttpGet]
         public JsonResult GetFlight(DateTime dt,string typ,string tp)
         {
-            try
+            logger.Info("dt=" + dt + "typ=" + typ);
+            if (tp == "R4"||tp=="R5"||tp=="R11")
             {
-                
-                //var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year&&x.HasPlotInCAV==1&&x.AircraftID!="X").ToList();
-                //logger.Info("Flight count=" + Flights.Count());
-                //var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
-                //logger.Info("MappedFlight count=" + MappedFlights.Count());
-                //if (typ == "ADS-B")
-                //{
-                //    Flights = Flights.Where(a => a.SensorID == 1).ToList();    //hard code SensorID
-                //}
-                //else if (typ == "SSR/MRT")
-                //{
-                //    Flights = Flights.Where(a => a.SensorID == 2).ToList();  //hard code SensorID
-                //}
-                //else
-                //{
-                //    Flights = null;
-                //}
-                int sensorId = typ == "ADS-B" ? 1 : 2;
-                var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year && x.HasPlotInCAV == 1 && x.AircraftID != "X"&&x.SensorID==sensorId).ToList();
-                
-
-                var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
-                
-                var data = new List<FlightListViewModel>();
-                if (Flights == null)
+                try
                 {
-                    return Json(new { status = false }, JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
-                    foreach (var Flight in Flights)
+                    var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year && a.R4_H_RMS > 0).ToList();
+                    var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year && x.HasPlotInCAV == 1 && x.SensorID == 2).ToList();
+                    var data = new List<FlightListViewModel>();
+                    if (MappedFlights == null || Flights == null)
                     {
-                        var item = new FlightListViewModel();
-                        item.AircraftID = Flight.AircraftID;
-                        item.Id = Flight.ID;
-                        item.Mode3ACode = Flight.Mode3ACode;
-                        item.SensorID = Flight.SensorID;
-                        item.DateOfFlight = Flight.DateofFlight;
-                        item.FilePath = Flight.FilePath;
-                        item.CallSign = Flight.CallSign;
-                        item.TimeFrom = Flight.TimeFrom.ToString("MM/dd/yyyy HH:mm:ss.fff ");
-                        item.TimeTo = Flight.TimeTo.ToString("MM/dd/yyyy HH:mm:ss.fff ");
-                        item.CreateTime = Flight.CreateTime;
-                        item.ProcessRound = Flight.ProcessRound;
-                        item.R2_5M = Flight.R2_5M.ToString();
-                        item.R2_5R = Flight.R2_5R.ToString();
-                        item.R3_5M = Flight.R3_5M_NG_LONGGAP_COUNT;
-                        item.R7_5M = Flight.R7_5M;
-                        item.R7_5R = Flight.R7_5R;
-                        item.R8_5M = Flight.R8_MFL_AGE_AVG;
-                        item.R9_5M = Flight.R9_MFL_AGE_MAX;
-                        item.R14_5M = Flight.R14_5M;
-                        item.R14_5R = Flight.R14_5R;
-                        item.NT_5M = Flight.R2_5M_NT;
-                        item.indicator = Flight.Indicator;
-                        if(tp=="R4" || tp == "R5" || tp == "R11")
-                        {
-                            var queryMapped = new MappedFlightView();
-                            if (typ == "SSR/MRT")
-                            {
-                                queryMapped = MappedFlights.Where(a => a.FlightID == Flight.ID).SingleOrDefault();
-                            }
-                            else if (typ == "ADS-B")
-                            {
-                                queryMapped = MappedFlights.Where(a => a.AnotherFlightID == Flight.ID).SingleOrDefault();
-                            }
-                            if(queryMapped!=null)
-                            {
-                                item.R4 = queryMapped.R4_H_RMS;
-                                item.R5 = queryMapped.R5_H_CE_R_5N;
-                                item.R11 = queryMapped.R11_V_RMS;
-                            }
-                        }
-                        data.Add(item);
+                        logger.Info("Info can not get Flight or MappedFlight: " + Flights.Count() + ":" + MappedFlights.Count());
+                        return Json(new { status = false }, JsonRequestBehavior.AllowGet);
                     }
-                    return Json(data, JsonRequestBehavior.AllowGet);
+                    else
+                    {
+                        foreach (var mappedFlight in MappedFlights)
+                        {
+                            var queryFlight = Flights.Where(x => x.ID == mappedFlight.FlightID).SingleOrDefault();
+                            if (queryFlight != null)
+                            {
+                                var item = new FlightListViewModel();
+                                item.AircraftID = queryFlight.AircraftID;
+                                item.Id = queryFlight.ID;
+                                item.Mode3ACode = queryFlight.Mode3ACode;
+                                item.SensorID = queryFlight.SensorID;
+                                item.DateOfFlight = queryFlight.DateofFlight;
+                                item.FilePath = queryFlight.FilePath;
+                                item.CallSign = queryFlight.CallSign;
+                                item.TimeFrom = queryFlight.TimeFrom.ToString("MM/dd/yyyy HH:mm:ss.fff ");
+                                item.TimeTo = queryFlight.TimeTo.ToString("MM/dd/yyyy HH:mm:ss.fff ");
+                                item.CreateTime = queryFlight.CreateTime;
+                                item.ProcessRound = queryFlight.ProcessRound;
+                                item.R2_5M = queryFlight.R2_5M.ToString();
+                                item.R2_5R = queryFlight.R2_5R.ToString();
+                                item.R3_5M = queryFlight.R3_5M_NG_LONGGAP_COUNT;
+                                item.R7_5M = queryFlight.R7_5M;
+                                item.R7_5R = queryFlight.R7_5R;
+                                item.R8_5M = queryFlight.R8_MFL_AGE_AVG;
+                                item.R9_5M = queryFlight.R9_MFL_AGE_MAX;
+                                item.R14_5M = queryFlight.R14_5M;
+                                item.R14_5R = queryFlight.R14_5R;
+                                item.NT_5M = queryFlight.R2_5M_NT;
+                                item.indicator = queryFlight.Indicator;
+                                item.R4 = mappedFlight.R4_H_RMS;
+                                item.R5 = mappedFlight.R5_H_CE_R_5N;
+                                item.R11 = mappedFlight.R11_V_RMS;
+                                data.Add(item);
+                            }
+
+                        }
+                        return Json(data, JsonRequestBehavior.AllowGet);
+                    }
+                }
+                catch (Exception e)
+                {
+                    logger.Error("Error exeption in R4:" + "(" + e.Message + ")");
+                    return null;
                 }
             }
-            catch (Exception)
+            else
             {
-                return null;
+                try
+                {
+
+                    int sensorId = typ == "ADS-B" ? 1 : 2;
+                    var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year && x.HasPlotInCAV == 1 && x.SensorID == sensorId).ToList();
+
+
+                    var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
+
+                    var data = new List<FlightListViewModel>();
+                    if (Flights == null)
+                    {
+                        return Json(new { status = false }, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        foreach (var Flight in Flights)
+                        {
+                            var item = new FlightListViewModel();
+                            item.AircraftID = Flight.AircraftID;
+                            item.Id = Flight.ID;
+                            item.Mode3ACode = Flight.Mode3ACode;
+                            item.SensorID = Flight.SensorID;
+                            item.DateOfFlight = Flight.DateofFlight;
+                            item.FilePath = Flight.FilePath;
+                            item.CallSign = Flight.CallSign;
+                            item.TimeFrom = Flight.TimeFrom.ToString("MM/dd/yyyy HH:mm:ss.fff ");
+                            item.TimeTo = Flight.TimeTo.ToString("MM/dd/yyyy HH:mm:ss.fff ");
+                            item.CreateTime = Flight.CreateTime;
+                            item.ProcessRound = Flight.ProcessRound;
+                            item.R2_5M = Flight.R2_5M.ToString();
+                            item.R2_5R = Flight.R2_5R.ToString();
+                            item.R3_5M = Flight.R3_5M_NG_LONGGAP_COUNT;
+                            item.R7_5M = Flight.R7_5M;
+                            item.R7_5R = Flight.R7_5R;
+                            item.R8_5M = Flight.R8_MFL_AGE_AVG;
+                            item.R9_5M = Flight.R9_MFL_AGE_MAX;
+                            item.R14_5M = Flight.R14_5M;
+                            item.R14_5R = Flight.R14_5R;
+                            item.NT_5M = Flight.R2_5M_NT;
+                            item.indicator = Flight.Indicator;
+                            //if (tp == "R4" || tp == "R5" || tp == "R11")
+                            //{
+                            //    var queryMapped = new MappedFlightView();
+                            //    if (typ == "SSR/MRT")
+                            //    {
+                            //        queryMapped = MappedFlights.Where(a => a.FlightID == Flight.ID).SingleOrDefault();
+                            //    }
+                            //    else if (typ == "ADS-B")
+                            //    {
+                            //        queryMapped = MappedFlights.Where(a => a.AnotherFlightID == Flight.ID).SingleOrDefault();
+                            //    }
+                            //    if (queryMapped != null)
+                            //    {
+                            //        item.R4 = queryMapped.R4_H_RMS;
+                            //        item.R5 = queryMapped.R5_H_CE_R_5N;
+                            //        item.R11 = queryMapped.R11_V_RMS;
+                            //    }
+                            //}
+                            data.Add(item);
+                        }
+                        var ans = Json(data, JsonRequestBehavior.AllowGet);
+                        ans.MaxJsonLength = int.MaxValue;
+                        return ans;
+                    }
+                }
+                catch (Exception e)
+                {
+                    logger.Error("Error exception in query:" + "(" + e.Message + ")");
+                    return null;
+                }
             }
+            
         }
 
         [System.Web.Http.HttpGet]
         public JsonResult GetMappedFlight(DateTime dt, string typ)
         {
-            int sensorId = typ == "ADS-B" ? 1 : 2;
-            int i = 0;
-            Decimal id = 0;
-            logger.Info("dt=" + dt + "typ=" + typ );
+            //int sensorId = typ == "ADS-B" ? 1 : 2;
             try
             {
-                var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year&&x.HasPlotInCAV==1&&x.SensorID== sensorId).ToList();
-                //var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year  && x.SensorID == sensorId).ToList();
-                var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year).ToList();
+                //var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year&&x.HasPlotInCAV==1&&x.SensorID== sensorId).ToList();
+                var Flights = app.FlightView.Query(x => x.DateofFlight.Date == dt.Date && x.DateofFlight.Month == dt.Month && x.DateofFlight.Year == dt.Year && x.HasPlotInCAV == 1 && x.SensorID == 2).ToList();
+                var MappedFlights = app.MappedFlightView.Query(a => a.TimeFrom.Date == dt.Date && a.TimeFrom.Month == dt.Month && a.TimeFrom.Year == dt.Year && a.R4_H_RMS>0).ToList();
 
-                //if (typ == "ADS-B")
-                //{
-                //    Flights = Flights.Where(a => a.SensorID == 1).ToList();    //hard code SensorID
-                //}
-                //else if (typ == "SSR/MRT")
-                //{
-                //    Flights = Flights.Where(a => a.SensorID == 2).ToList();  //hard code SensorID
-                //}
-                //else
-                //{
-                //    Flights = null;
-                //}
-
+               
                 var data = new List<MappedFlightViewModel>();
                 if (Flights == null)
                 {
@@ -187,51 +222,40 @@ namespace SUREF.Controllers
                 else
                 {
                     logger.Info("Flights count=" + Flights.Count());
-                    foreach (var Flight in Flights)
+                    foreach (var mappedFlight in MappedFlights)
                     {
-                        id = Flight.ID;
                         var item = new MappedFlightViewModel();
                         List<MappedFlightView> Mapped = new List<MappedFlightView>();
-                        if (typ == "SSR/MRT")
+                        //if (typ == "SSR/MRT")
+                        //{
+                        //    Mapped = MappedFlights.Where(a => a.FlightID == Flight.ID).ToList();
+                        //}
+                        //else if (typ == "ADS-B")
+                        //{
+                        //    Mapped = MappedFlights.Where(a => a.AnotherFlightID == Flight.ID).ToList();
+                        //}
+                        var queryFlight = Flights.Where(x => x.ID == mappedFlight.FlightID).SingleOrDefault();
+                        if (queryFlight!=null)
                         {
-                            Mapped = MappedFlights.Where(a => a.FlightID == Flight.ID).ToList();
-                        }
-                        else if (typ == "ADS-B")
-                        {
-                            Mapped = MappedFlights.Where(a => a.AnotherFlightID == Flight.ID).ToList();
-                        }
-                        else
-                        {
-                            logger.Error("Erro typr:" + typ);
-                        } 
-                        if (Mapped.Count >0)
-                        {
-                            foreach(var map in Mapped)
-                            {
-                                i++;
-                                item.AnotherFlightID = map.AnotherFlightID;
-                                item.R4_RMS = map.R4_H_RMS;
-                                item.R5 = map.R5_H_CE_R_5N;
-                                item.R11 = map.R11_V_RMS;
+                                item.FlightID = mappedFlight.FlightID;
+                                item.R4_RMS = mappedFlight.R4_H_RMS;
+                                item.R5 = mappedFlight.R5_H_CE_R_5N;
+                                item.R11 = mappedFlight.R11_V_RMS;
+                            item.indicator = queryFlight.Indicator;
                                 data.Add(item);
-                            }
+                            
                         }
                         else
                         {
-                            logger.Error("Error count:" + Flight.ID);
+                            logger.Error("Error count:" + mappedFlight.Id);
                         }
                     }
-                    logger.Info("data json count=" + data.Count());
-                    logger.Info("data 7926 count=" + data.Where(x=>x.AnotherFlightID==7926).Count());
-                    logger.Info("data 8378 count=" + data.Where(x => x.AnotherFlightID == 8378).Count());
-                    logger.Info("data 8471 count=" + data.Where(x => x.AnotherFlightID == 8471).Count());
-                    logger.Info("i count=" + i);
                     return Json(data, JsonRequestBehavior.AllowGet);
                 }
             }
             catch (Exception e)
             {
-                logger.Error("Error:"+id+"(" + e.Message+")");
+                logger.Error("Error:"+"(" + e.Message+")");
                 return null;
             }
         }
@@ -264,6 +288,7 @@ namespace SUREF.Controllers
     }
     public class SummaryApiController : ApiController
     {
+        readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         [System.Web.Http.HttpGet]
         public IHttpActionResult Get()
         {
@@ -298,6 +323,7 @@ namespace SUREF.Controllers
             }
             catch(Exception e)
             {
+                logger.Error("Error: Pst indicator"  + "(" + e.Message + ")");
                 return InternalServerError(e);
             }
             

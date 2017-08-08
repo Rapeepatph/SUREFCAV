@@ -156,16 +156,21 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-success">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
                             <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
                         </div>
                         <div class="col-xs-9">
-                            <h4>Path Status  </h4>
+                            <h4>Sensor Information  </h4>
                             <a>All available :</a><br />
-                            <b>{{detailAllDistance}}</b>
+                            <ul style="padding-left:10px" ng-repeat="x in detailAllDistance | orderBy:'dist/1'">
+                                <li ng-class="{'text-success':x.selected=='S'}">
+                                    <p>{{x.name}}({{x.typ}})</p>
+                                    <p>:{{x.dist}} km.</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

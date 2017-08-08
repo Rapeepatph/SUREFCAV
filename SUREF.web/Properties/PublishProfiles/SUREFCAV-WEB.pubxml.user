@@ -112,7 +112,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/03/2017 08:34:36</publishTime>
     </File>
     <File Include="bin/SUREF.dll">
-      <publishTime>08/04/2017 16:30:15</publishTime>
+      <publishTime>08/08/2017 16:43:00</publishTime>
     </File>
     <File Include="bin/SUREF.Repositories.dll">
       <publishTime>08/03/2017 08:34:36</publishTime>
@@ -448,7 +448,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2017 16:34:51</publishTime>
     </File>
     <File Include="Scripts/app/diag.js">
-      <publishTime>08/01/2017 15:28:18</publishTime>
+      <publishTime>08/07/2017 14:35:09</publishTime>
     </File>
     <File Include="Scripts/app/flight.js">
       <publishTime>02/10/2017 10:52:15</publishTime>
@@ -457,16 +457,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/17/2016 14:57:00</publishTime>
     </File>
     <File Include="Scripts/app/mapFix.js">
-      <publishTime>08/04/2017 07:09:20</publishTime>
+      <publishTime>08/07/2017 14:38:04</publishTime>
     </File>
     <File Include="Scripts/app/search.js">
-      <publishTime>06/23/2017 08:58:13</publishTime>
+      <publishTime>08/07/2017 14:36:40</publishTime>
     </File>
     <File Include="Scripts/app/services.js">
       <publishTime>06/15/2017 14:46:35</publishTime>
     </File>
     <File Include="Scripts/app/summary.js">
-      <publishTime>06/07/2017 13:57:56</publishTime>
+      <publishTime>08/07/2017 17:01:29</publishTime>
     </File>
     <File Include="Scripts/app/summaryDetails.js">
       <publishTime>08/03/2017 06:46:08</publishTime>
@@ -2895,6 +2895,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Map/CoverageMap.cshtml">
       <publishTime>06/08/2017 14:23:02</publishTime>
     </File>
+    <File Include="Views/Map/Debug.cshtml">
+      <publishTime>08/08/2017 11:12:48</publishTime>
+    </File>
     <File Include="Views/Map/Details.cshtml">
       <publishTime>07/27/2017 14:40:13</publishTime>
     </File>
@@ -2920,7 +2923,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/19/2017 15:28:36</publishTime>
     </File>
     <File Include="Views/Search/Index.cshtml">
-      <publishTime>06/21/2017 09:50:40</publishTime>
+      <publishTime>08/07/2017 14:18:11</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>10/21/2016 12:58:32</publishTime>
@@ -2929,22 +2932,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2016 12:58:32</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/27/2017 14:01:05</publishTime>
+      <publishTime>08/08/2017 11:23:47</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>07/14/2017 09:43:53</publishTime>
     </File>
     <File Include="Views/Summary/detail.cshtml">
-      <publishTime>08/03/2017 06:54:17</publishTime>
+      <publishTime>08/08/2017 16:39:39</publishTime>
     </File>
     <File Include="Views/Summary/History.cshtml">
-      <publishTime>05/30/2017 14:59:11</publishTime>
+      <publishTime>08/07/2017 17:07:29</publishTime>
     </File>
     <File Include="Views/Summary/Index.cshtml">
       <publishTime>05/24/2017 16:23:49</publishTime>
     </File>
     <File Include="Views/Summary/Landing.cshtml">
-      <publishTime>06/08/2017 08:25:16</publishTime>
+      <publishTime>08/07/2017 16:39:36</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>11/01/2016 09:11:17</publishTime>
@@ -2953,7 +2956,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2016 12:58:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/03/2017 07:49:05</publishTime>
+      <publishTime>08/08/2017 13:23:20</publishTime>
     </File>
   </ItemGroup>
 </Project>

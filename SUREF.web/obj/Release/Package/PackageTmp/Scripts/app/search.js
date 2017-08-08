@@ -10,13 +10,13 @@
     var icons = {
         blue: {
             type: 'div',
-            iconSize: [10, 10],
+            iconSize: [6, 6],
             className: 'blue',
             iconAnchor: [5, 5]
         },
         red: {
             type: 'div',
-            iconSize: [10, 10],
+            iconSize: [6, 6],
             className: 'red',
             iconAnchor: [5, 5]
         },
@@ -362,8 +362,9 @@
     }
     var getLine = function (list, lat, lng, sic, color, text, width, dash) {
         var target = list.filter(x => x.SIC == sic);
-        var distance = myService.getDistance(target[0].Lat, target[0].Lng, lat, lng);
-        if (target.length != 0) {
+        
+        if (target.length > 0) {
+            var distance = myService.getDistance(target[0].Lat, target[0].Lng, lat, lng);
             var p = {
                 layer: 'path',
                 color: color,
@@ -378,6 +379,9 @@
             };
             return p;
         }
+        else {
+            return null;
+        }
     }
     var createPathToSur = function (lat, lng, sic, sicList, cat) {
         var adsbList = qlist[1].$$state.value.data;
@@ -388,7 +392,7 @@
 
         color = getColor(ssrList, adsbList, sic);
 
-        var line = getLine(list, lat, lng, sic, color, 'selected', 6, null);
+        var line = getLine(list, lat, lng, sic, color, 'selected', 2, null);
         if (line != null) dynamicPath.push(line);
 
         var aList = sicList.split('_');
@@ -396,7 +400,7 @@
             aList.forEach(function (entry) {
                 if (entry != sic) {
                     color = getColor(ssrList, adsbList, entry);
-                    var templine = getLine(list, lat, lng, entry, color, 'available', 3, '5,10');
+                    var templine = getLine(list, lat, lng, entry, color, 'available', 2, '8,4');
                     if (templine != null) dynamicPath.push(templine);
                 }
             });
@@ -420,37 +424,59 @@
         return false;
     }
     $scope.$on("leafletDirectiveMarker.map.click", function (event, args) {
-        console.log(args.model);
-        $scope.detailLat = args.model.lat.toFixed(2);
-        $scope.detailLng = args.model.lng.toFixed(2);
-        $scope.detailSic = args.model.sic;
-        $scope.detailNucp = args.model.nucp;
-        $scope.detailCat = args.model.cat;
-        $scope.detailDatetime = args.model.dt;
-        $scope.detailHeight = args.model.height;
-        $scope.detailClimbRate = args.model.climbRate;
-        $scope.detailAngle = args.model.angle;
-        $scope.detailAllDistance = '';
-        $scope.detailCallSign = args.model.callsign;
-        $scope.detailAircraftId = args.model.aircraftAddress;
-        var sicList = args.model.siclist.join('_');
-        for (var i = 0; i < args.model.siclist.length; i++) {
-            var obj = getNameBySIC(args.model.siclist[i]);
-            var status = 'A';
-            var distance = myService.getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
-            if (args.model.sic == obj[0].SIC) {
-                status = 'S';
+        console.log(args.model);                      //test 
+        if (args.model.dt != null) {
+            $scope.detailLat = args.model.lat.toFixed(2);
+            $scope.detailLng = args.model.lng.toFixed(2);
+            var nameSic = getNameBySIC(args.model.sic);
+            $scope.detailSic = nameSic[0].Name + '(' + args.model.sic + ')';
+            $scope.detailNucp = args.model.nucp;
+            $scope.detailCat = args.model.cat;
+            $scope.detailDatetime = args.model.dt;
+            $scope.detailHeight = args.model.height;
+            $scope.detailClimbRate = args.model.climbRate;
+            $scope.detailAngle = args.model.angle;
+            $scope.detailAllDistance =[];
+            $scope.detailCallSign = args.model.callsign;
+            for (var i = 0; i < args.model.siclist.length; i++) {
+                var obj = getNameBySIC(args.model.siclist[i]);
+                var typname = '';
+                if (obj.length > 0) {
+                    if (obj[0].Type.substring(0, 4) == 'MSSR') {
+                        typname = 'SSR';
+                    }
+                    else {
+                        typname = 'ADS-B';
+                    }
+                    var status = 'A';
+                    var distance = myService.getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
+                    if (args.model.sic == obj[0].SIC) {
+                        status = 'S';
+                    }
+                    $scope.detailAllDistance.push({
+                        name: obj[0].Name,
+                        selected: status,
+                        dist: distance,
+                        typ: typname
+                    });
+                }
             }
-            $scope.detailAllDistance += obj[0].Name + "(" + status + ") : " + distance + " km" + '\r\n';
+            if (!inArray(args.model.sic, args.model.siclist)) {
+                var obj = getNameBySIC(args.model.sic);
+                var status = 'S';
+                var distance = myService.getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
+                $scope.detailAllDistance.push({
+                    name: obj[0].Name,
+                    selected: status,
+                    dist: distance,
+                    typ: obj[0].Type.substring(0, 4)
+                });
+                //$scope.detailAllDistance += obj[0].Name + "(" + status + ") : " + distance + " km" + '\r\n';
+            }
+            var sicList = args.model.siclist.join('_');
+            createPathToSur(args.model.lat, args.model.lng, args.model.sic, sicList, args.model.cat)
         }
-        if (!inArray(args.model.sic, args.model.siclist)) {
-            var obj = getNameBySIC(args.model.sic);
-            var status = 'S';
-            var distance = myService.getDistance(obj[0].Lat, obj[0].Lng, args.model.lat, args.model.lng)
-            $scope.detailAllDistance += obj[0].Name + "(" + status + ") : " + distance + " km" + '\r\n';
-        }
-        createPathToSur(args.model.lat, args.model.lng, args.model.sic, sicList, args.model.cat)
-    })
+    });
     $scope.$on("leafletDirectiveMap.map.click", function (event, args) {
         dynamicPath = [];
         $scope.paths =  dynamicPath;

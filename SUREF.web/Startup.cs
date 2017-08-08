@@ -7,7 +7,7 @@ using System.Linq;
 using Microsoft.AspNet.Identity;
 
 [assembly: OwinStartupAttribute(typeof(SUREF.Startup))]
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "Web.config", Watch = true)]
 namespace SUREF
 {
     public partial class Startup

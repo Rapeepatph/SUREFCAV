@@ -20,13 +20,42 @@ namespace SUREF.Controllers
         public ActionResult Index(string id,string date,string typ,DateTime dt)
         {
             string sensorName = typ == "SSR/MRT" ? "MRT-TopSky" : typ;
-            var sensor = app.SensorView.Query(a => a.Name == sensorName).SingleOrDefault();
-            var flight = app.FlightView.Query(x => x.SensorID==sensor.ID&&x.DateofFlight.DayOfYear==dt.DayOfYear&& x.AircraftID == id).FirstOrDefault();
+            int idInput = Int32.Parse(id);
+            var flight = app.FlightView.Query(x => x.ID == idInput && x.DateofFlight.DayOfYear == dt.DayOfYear).FirstOrDefault();
+            
+            if (id == "X")
+            {
+                ViewBag.AircraftID = flight.TrackID;
+                
+            }
+            else
+            {
+                ViewBag.AircraftID = flight.AircraftID;
+            
+            }
+            
             ViewBag.TimeFrom = flight.TimeFrom.TimeOfDay;
             ViewBag.TimeTo = flight.TimeTo.TimeOfDay;
-            ViewBag.AircraftID = id;
             ViewBag.Date = Regex.Replace(date, "-", "");
             return View();
+        }
+        public ActionResult Debug(string id, string date)
+        {
+            //string sensorName = typ == "SSR/MRT" ? "MRT-TopSky" : typ;
+            //var sensor = app.SensorView.Query(a => a.Name == sensorName).SingleOrDefault();
+            //var flight = app.FlightView.Query(x => x.SensorID == sensor.ID && x.DateofFlight.DayOfYear == dt.DayOfYear && x.AircraftID == id).FirstOrDefault();
+            //ViewBag.TimeFrom = flight.TimeFrom.TimeOfDay;
+            //ViewBag.TimeTo = flight.TimeTo.TimeOfDay;
+            if (String.IsNullOrEmpty(id) || String.IsNullOrEmpty(date))
+            {
+                return View();
+            }
+            else
+            {
+                ViewBag.AircraftID = id;
+                ViewBag.Date = Regex.Replace(date, "-", "");
+                return View();
+            }
         }
         public ActionResult Details(string id, string date,string topic,string typ,DateTime dt,string dtstring)
         {

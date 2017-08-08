@@ -166,11 +166,11 @@
                             </a>
                         </td>
                     }
-                    <td data-title="'Using'" class="text-center">
+                    <td data-title="'Using'" class="text-center" sortable="'indicator'" filter="{indicator: 'number'}">
                         <button type="button" class="btn btn-{{btnClass(row.indicator)}}" ng-click="AddDatatoDb(row.AircraftID,selectedDate)">{{btnmsg(row.indicator)}}</button>
                     </td>
                     <td>
-                        <a href="/map/index/{{row.AircraftID}}?date={{selectedDate}}&typ=@ViewBag.Typ&dt={{dt}}"  target="_blank">
+                        <a href="/map/index/{{row.Id}}?date={{selectedDate}}&typ=@ViewBag.Typ&dt={{dt}}"  target="_blank">
                             <span class="glyphicon glyphicon-cog"></span>
                         </a>
                     </td>

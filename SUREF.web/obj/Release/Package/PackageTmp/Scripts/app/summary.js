@@ -7,6 +7,7 @@
     var selDate = [];
     var dateArray=[];
     selDate = inputDate.split('-');
+    $scope.dateInfo = selDate[0] + "-" + selDate[1] + "-" + selDate[2];
 $scope.showDate = inputDate;
     $scope.strtdate = new Date(Date.UTC(selDate[2], selDate[1]-1, selDate[0], 0, 0, 0));
    // $scope.strtdate = new Date(Date.UTC(2017, 0, 24, 0, 0, 0));
@@ -326,22 +327,27 @@ $scope.showDate = inputDate;
     }
     var calMapped = function (datas) {
         if (datas.length > 0) {
+            var count = 0;
             angular.forEach(datas, function (element) {
-                R4_Cal(element.R4_RMS);
-                R5_Cal(element.R5);
-                R11_Cal(element.R11);
+                if (element.indicator == 1) {
+                    R4_Cal(element.R4_RMS);
+                    R5_Cal(element.R5);
+                    R11_Cal(element.R11);
+                    count++;
+                }
             });
-            $scope.R4.globalPercent = calGlobalPercent($scope.R4.clean, datas.length);
+            $scope.totalMappedFlights = count;
+            $scope.R4.globalPercent = calGlobalPercent($scope.R4.clean, count);
             $scope.R4.status = $scope.R4.globalPercent < 98 ? 'danger' : 'success'
             $scope.R4.point = calPoint($scope.R4.globalPercent);
             $('#input-r4').rating('update', $scope.R4.point);
 
-            $scope.R5.globalPercent = calGlobalPercent($scope.R5.clean, datas.length);
+            $scope.R5.globalPercent = calGlobalPercent($scope.R5.clean, count);
             $scope.R5.status = $scope.R5.globalPercent < 100 ? 'danger' : 'success'
             $scope.R5.point = calPoint($scope.R5.globalPercent);
             $('#input-r5').rating('update', $scope.R5.point);
 
-            $scope.R11.globalPercent = calGlobalPercent($scope.R11.clean, datas.length);
+            $scope.R11.globalPercent = calGlobalPercent($scope.R11.clean, count);
             $scope.R11.status = $scope.R11.globalPercent < 99.9 ? 'danger' : 'success'
             $scope.R11.point = calPoint($scope.R11.globalPercent);
             $('#input-r11').rating('update', $scope.R11.point);
@@ -447,6 +453,7 @@ $scope.clickPrev = function(){
     var input = [];
     $scope.showDate = dateArray[$scope.current];
     input = dateArray[$scope.current].split('-');
+    $scope.dateInfo = input[2] + "-" + input[1] + "-" + input[0];
     $scope.strtdate = new Date(Date.UTC(input[0], input[1] - 1, input[2], 0, 0, 0));
     process();
     //var dt = getDateTime($scope.strtdate);
@@ -467,6 +474,7 @@ $scope.clickNext = function () {
     var input = [];
     $scope.showDate = dateArray[$scope.current];
     input = dateArray[$scope.current].split('-');
+    $scope.dateInfo = input[2] + "-" + input[1] + "-" + input[0];
     $scope.strtdate = new Date(Date.UTC(input[0], input[1] - 1, input[2], 0, 0, 0));
     process();
 }
@@ -582,7 +590,7 @@ $scope.clickNext = function () {
         list.push($http.get('/summary/GetMappedFlight?dt=' + dt + '&typ=' + typ));
         $q.all(list).then(function success(res) {
             //$scope.totalFlights = res[0].data.length;
-            $scope.totalMappedFlights = res[1].data.length;
+            //$scope.totalMappedFlights = res[1].data.length;
             calFlight(res[0].data);
             calMapped(res[1].data);
             

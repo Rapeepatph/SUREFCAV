@@ -89,19 +89,19 @@
     var icons = {
         blue: {
             type: 'div',
-            iconSize: [10, 10],
+            iconSize: [6, 6],
             className: 'blue',
             iconAnchor: [5, 5]
         },
         red: {
             type: 'div',
-            iconSize: [10, 10],
+            iconSize: [6, 6],
             className: 'red',
             iconAnchor: [5, 5]
         },
         green: {
             type: 'div',
-            iconSize: [10, 10],
+            iconSize: [6, 6],
             className: 'green',
             iconAnchor: [5, 5]
         },
@@ -169,7 +169,7 @@
         var p = {
             layer: 'path',
             color: 'black',
-            weight: 5,
+            weight: 2,
             latlngs: [
                 { lat: anslat, lng: anslng },
                 { lat: reflat, lng: reflng }
@@ -242,7 +242,7 @@
             layer: 'path',
             opacity: 0.2,
             weight: 0.3,
-            fillColor: 'yellow',
+            fillColor: 'grey',
             fillOpacity: 0.1
         })
     }

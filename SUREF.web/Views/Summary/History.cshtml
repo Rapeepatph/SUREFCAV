@@ -28,8 +28,14 @@
                 <thead>
                     <tr>
                         <th>Probability of update</th>
-                        <th>@Html.ActionLink("SSR/MRT", "Index", "Summary", routeValues: new { selectedDate = ViewBag.RecentlyDate, sensorid = 2 }, htmlAttributes: null) </th>
-                        <th>@Html.ActionLink("ADS-B", "Index", "Summary", routeValues: new { selectedDate = ViewBag.RecentlyDate, sensorid = 1 }, htmlAttributes: null) </th>
+                        @*<th>@Html.ActionLink("SSR/MRT", "Index", "Summary", routeValues: new { selectedDate = ViewBag.RecentlyDate, sensorid = 2 }, htmlAttributes: null) </th>
+                        <th>@Html.ActionLink("ADS-B", "Index", "Summary", routeValues: new { selectedDate = ViewBag.RecentlyDate, sensorid = 1 }, htmlAttributes: null) </th>*@
+                        <th>
+                            <a href="/summary/Index?selectedDate={{dateInfo}}&sensorid=2">SSR/MRT</a>
+                        </th>
+                        <th>
+                            <a href="/summary/Index?selectedDate={{dateInfo}}&sensorid=1">ADS-B</a>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
